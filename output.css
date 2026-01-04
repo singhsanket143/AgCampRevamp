@@ -964,10 +964,6 @@ h1,
   margin-top: 0.5rem;
 }
 
-.mt-24 {
-  margin-top: 6rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -2707,11 +2703,6 @@ h1,
   background-color: rgb(6 182 212 / 0.1);
 }
 
-.bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
-
 .bg-green-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
@@ -3114,10 +3105,6 @@ h1,
 
 .bg-origin-content {
   background-origin: content-box;
-}
-
-.fill-primary {
-  fill: #0070f3;
 }
 
 .stroke-orange-500\/30 {
@@ -4795,10 +4782,6 @@ h1,
 
   .md\:order-2 {
     order: 2;
-  }
-
-  .md\:col-span-2 {
-    grid-column: span 2 / span 2;
   }
 
   .md\:ml-\[-100px\] {
