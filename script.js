@@ -342,18 +342,69 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Content element:', codeContent);
     console.log('Interactive keywords found:', interactiveKeywords.length);
 
-    // Code Snippets Database
+    // Code Snippets Database - Learning Outcomes
     const codeSnippets = {
-        'eureka': 'eureka:\n  client:\n    registerWithEureka: true\n    fetchRegistry: true\n    serviceUrl:\n      defaultZone: http://localhost:8761/eureka/',
-        'resilience': '@CircuitBreaker(name = "backendA", fallbackMethod = "fallback")\npublic String doSomething() {\n    return backendA.failure();\n}',
-        'grpc': 'service Greeter {\n  rpc SayHello (HelloRequest) returns (HelloReply) {}\n}\nmessage HelloRequest {\n  string name = 1;\n}',
-        'sharding': 'sh.enableSharding("appDB");\nsh.shardCollection("appDB.users", { "country": 1, "userId": 1 });',
-        'cdc': '{ "name": "inventory-connector",\n  "config": {\n    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",\n    "database.hostname": "postgres",\n    "table.include.list": "public.inventory"\n  }\n}',
-        'caching': '@Cacheable(value = "users", key = "#userId")\npublic User getUser(Long userId) {\n    return repository.findById(userId);\n}',
-        'kafka': 'Properties props = new Properties();\nprops.put("bootstrap.servers", "localhost:9092");\nprops.put("key.serializer", "StringSerializer");\nprops.put("value.serializer", "StringSerializer");',
-        'docker': 'FROM eclipse-temurin:17-jdk-alpine\nVOLUME /tmp\nCOPY target/*.jar app.jar\nENTRYPOINT ["java","-jar","/app.jar"]',
-        'k8s': 'apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: backend-api\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: backend',
-        'chaos': 'apiVersion: chaos-mesh.org/v1alpha1\nkind: PodChaos\nmetadata:\n  name: pod-failure-example\nspec:\n  action: pod-failure\n  mode: one'
+        // Phase 1: Foundation
+        'gradle': 'Learning Outcomes:\n• Master Gradle build scripts and multi-module projects\n• Create fat jars and custom Gradle tasks\n• Understand dependency management and build lifecycle\n• Configure Gradle for Spring Boot applications',
+        'jvm': 'Learning Outcomes:\n• Deep dive into JVM internals and memory model\n• Master garbage collection algorithms and tuning\n• Understand class loading and bytecode execution\n• Performance profiling and optimization techniques',
+        'aop': 'Learning Outcomes:\n• Create custom annotations in Spring\n• Implement Aspect-Oriented Programming (AOP)\n• Understand JDK Dynamic Proxies vs CGLIB\n• Apply cross-cutting concerns (logging, security)',
+        'lld': 'Learning Outcomes:\n• Master OOP principles in Java\n• Implement design patterns: Builder, Singleton, Strategy, Observer\n• Design clean, maintainable class hierarchies\n• Apply SOLID principles in practice',
+        'spring-basics': 'Learning Outcomes:\n• Understand Spring Boot auto-configuration\n• Master dependency injection and inversion\n• Configure applications with application.properties\n• Create REST APIs with Spring MVC\n• Document APIs using OpenAPI/Swagger',
+        'rest-api': 'Learning Outcomes:\n• Build RESTful services with Spring MVC\n• Implement CRUD operations\n• Handle exceptions with @ControllerAdvice\n• Call external APIs using RestTemplate\n• Create DTOs and manage request/response mapping',
+        
+        // Phase 2: Architecture
+        'mvc': 'Learning Outcomes:\n• Design industry-ready project structure\n• Implement layered architecture (Controller, Service, Repository)\n• Organize config, seeders, jobs, and consumers\n• Build scalable MVC and modified MVC patterns',
+        'microservices': 'Learning Outcomes:\n• Understand Modular Monolith vs Microservices\n• Design microservices with Spring Cloud\n• Implement Feign Clients for service communication\n• Create HLD for Ecommerce, Uber, and Wallet systems\n• Master synchronous & asynchronous communication',
+        
+        // Phase 3: Data Layer
+        'jpa': 'Learning Outcomes:\n• Create entities with UUIDs and Lombok\n• Master inheritance strategies (@MappedSuperclass, @TablePerClass, @Joined)\n• Implement relational mappings (1:1, 1:N, M:N)\n• Write JPQL, Raw SQL, and Criteria API queries\n• Solve N+1 problem and optimize fetch strategies\n• Use Flyway for schema migrations',
+        'db-basics': 'Learning Outcomes:\n• Master DB normalization and ACID properties\n• Understand transaction isolation levels\n• Design schemas for E-commerce, Uber, Wallet apps\n• Optimize queries and understand indexing\n• Introduction to NoSQL (MongoDB) and use cases',
+        'indexing': 'Learning Outcomes:\n• Create and manage database indexes\n• Understand types of indexes (B-Tree, Hash, etc.)\n• Analyze query performance with/without indexes\n• Master B-Tree internals and index optimization',
+        'sharding': 'Learning Outcomes:\n• Understand partitioning and sharding strategies\n• Implement horizontal sharding in databases\n• Design shard keys for optimal distribution\n• Handle cross-shard queries and transactions',
+        'replication': 'Learning Outcomes:\n• Master Master-Slave replication architecture\n• Implement Multi-Master replication\n• Understand Leaderless architecture and quorums\n• Design replication for write/read heavy systems\n• Handle replication lag and consistency',
+        'transactions': 'Learning Outcomes:\n• Deep dive into ACID properties implementation\n• Master atomicity, consistency, isolation, durability\n• Understand strong vs eventual consistency\n• Implement pessimistic & optimistic concurrency control\n• Handle isolation levels and serialization',
+        'schema-design': 'Learning Outcomes:\n• Design complex schemas for Twitter & Airbnb\n• Normalize databases effectively\n• Optimize for different edge cases\n• Balance normalization vs denormalization',
+        'mongodb': 'Learning Outcomes:\n• Backup and restore MongoDB databases\n• Implement sharding and replication in MongoDB\n• Master transactions and ACID in MongoDB\n• Optimize with indexing and aggregation framework\n• Secure MongoDB deployments',
+        
+        // Phase 4: Distributed Patterns
+        'cqrs': 'Learning Outcomes:\n• Understand Command Query Responsibility Segregation\n• Scale queries and mutations separately\n• Implement eventual consistency in CQRS\n• Design read and write models\n• Build materialized views for queries',
+        'saga': 'Learning Outcomes:\n• Master SAGA pattern for distributed transactions\n• Implement Orchestration-based SAGA\n• Implement Choreography-based SAGA (event-based)\n• Handle compensation and rollback strategies\n• Design SAGA for financial systems',
+        'event-sourcing': 'Learning Outcomes:\n• Implement Event Sourcing with Kafka\n• Store events as source of truth\n• Rebuild state from event stream\n• Handle event versioning and migration\n• Combine with CQRS for scalable systems',
+        'outbox': 'Learning Outcomes:\n• Understand Transactional Outbox Pattern\n• Guarantee event publishing with outbox\n• Configure databases for Change Data Capture (CDC)\n• Implement CDC using Debezium\n• Handle event ordering and idempotency',
+        'kafka': 'Learning Outcomes:\n• Master Kafka architecture (Topics, Partitions, Brokers)\n• Implement Kafka Producers and Consumers\n• Handle Kafka Stream processing\n• Build real-time data pipelines\n• Understand consumer groups and offsets',
+        'rabbitmq': 'Learning Outcomes:\n• Understand RabbitMQ architecture\n• Implement message exchange patterns\n• Build publish-subscribe patterns\n• Handle message acknowledgments and delivery guarantees\n• Configure dead letter queues and retry mechanisms',
+        'consistency': 'Learning Outcomes:\n• Master consistency models: Eventual, Causal, Immediate\n• Understand CAP theorem trade-offs\n• Design for strong vs eventual consistency\n• Implement consistency patterns in distributed systems',
+        
+        // Phase 5: Communication
+        'grpc': 'Learning Outcomes:\n• Understand gRPC for inter-service communication\n• Compare Protobufs with Thrift and JSON\n• Understand performance improvements and payload size\n• Implement gRPC services in Spring Boot\n• Handle streaming and bidirectional communication',
+        'caching': 'Learning Outcomes:\n• Integrate Redis with Spring Data Redis\n• Implement caching strategies (TTL, eviction)\n• Master cache invalidation patterns\n• Build layered caching (Read Back, Read Through, Read Around)\n• Optimize cache hit rates',
+        'websockets': 'Learning Outcomes:\n• Implement WebSockets using STOMP and SockJS\n• Build real-time chat/order updates\n• Handle WebSocket connections in Spring Boot\n• Design real-time notification systems\n• Manage connection lifecycle and error handling',
+        'auth': 'Learning Outcomes:\n• Configure Spring Security\n• Implement JWT-based authentication\n• Build role-based access control (RBAC)\n• Understand OAuth 2.0 basics\n• Secure microservices with authentication',
+        'spring-ai': 'Learning Outcomes:\n• Integrate and configure LLM models with Spring AI\n• Build AI-powered features in Spring Boot\n• Understand prompt engineering\n• Handle AI API calls and responses',
+        'distributed-locks': 'Learning Outcomes:\n• Implement distributed locks using Redis\n• Compare with pessimistic and optimistic locking\n• Build optimistic, pessimistic, and distributed lock implementations\n• Handle lock expiration and deadlocks\n• Design lock-based concurrency control',
+        
+        // Phase 6: API & Gateway
+        'idempotency': 'Learning Outcomes:\n• Understand idempotency and its use cases\n• Implement idempotent APIs\n• Handle idempotency keys and tokens\n• Design idempotent payment and transaction APIs\n• Prevent duplicate operations',
+        'api-gateway': 'Learning Outcomes:\n• Implement API Gateway patterns (Kong, AWS API Gateway)\n• Configure rate limiting and throttling\n• Handle request/response transformation\n• Implement API versioning and documentation\n• Set up authentication at gateway level\n• Build circuit breaking and fallback mechanisms',
+        'geohashing': 'Learning Outcomes:\n• Understand how GeoHashing works\n• Compare GeoHashing with quadtrees\n• Use databases with GeoHashing for location search\n• Find nearby drivers/users using spatial indexes\n• Build scalable location-based APIs',
+        'aws-db': 'Learning Outcomes:\n• Use AWS RDS for relational databases\n• Configure AWS DocumentDB and MongoDB Atlas\n• Master Amazon DynamoDB\n• Implement Amazon S3 for blob storage\n• Use Amazon Redshift for analytics',
+        'aws-lambda': 'Learning Outcomes:\n• Create serverless functions in AWS Lambda\n• Set up permissions using IAM\n• Integrate Lambda with ELB\n• Build event-driven architectures\n• Optimize Lambda performance and costs',
+        
+        // Phase 7: Projects
+        'uber-project': 'Learning Outcomes:\n• Build Uber-like ride hailing backend with HLD & LLD\n• Implement GeoHashing for driver-rider matching\n• Use databases for spatial queries\n• Build scalable APIs for real-time location tracking\n• Implement WebSockets for real-time notifications\n• Design order matching and pricing algorithms',
+        'wallet-project': 'Learning Outcomes:\n• Build payment wallet system (Paytm/Uber wallet)\n• Handle distributed transactions for financial systems\n• Integrate high-consistency databases\n• Optimize SAGA using choreography and orchestration\n• Implement idempotent payment APIs\n• Design ledger and transaction systems',
+        'airbnb-project': 'Learning Outcomes:\n• Setup microservices-based hotel booking application\n• Integrate MySQL and MongoDB for different services\n• Implement JWT-based authentication\n• Handle concurrency issues with transactional APIs\n• Build idempotent booking APIs\n• Integrate migrations in MySQL',
+        'stock-project': 'Learning Outcomes:\n• Build stock exchange for order matching (like NSE)\n• Understand order matching algorithms\n• Implement design patterns (Strategy, Builder)\n• Maintain order book in memory using Redis\n• Create limit order algorithms\n• Master multi-threading for scalable exchange',
+        'quora-project': 'Learning Outcomes:\n• Build Quora clone with Q&A and social features\n• Understand complex schema setup\n• Implement MVC architecture with services/repositories\n• Build complex ODM queries\n• Integrate ElasticSearch for inverted index search\n• Design feed generation pipelines',
+        'ecommerce-project': 'Learning Outcomes:\n• Build monolithic ecommerce application\n• Understand Spring Boot annotations\n• Integrate databases and understand services/repositories\n• Implement REST APIs in industry standard format\n• Design product catalog and order management\n• Handle inventory and payment flows',
+        
+        // Legacy entries (keeping for compatibility)
+        'eureka': 'Learning Outcomes:\n• Implement Service Discovery using Spring Cloud Netflix Eureka\n• Register and discover microservices\n• Handle service health checks\n• Configure Eureka server and clients\n• Build resilient service communication',
+        'resilience': 'Learning Outcomes:\n• Implement Circuit Breakers for fault tolerance\n• Build fallback mechanisms\n• Handle cascading failures\n• Monitor and manage service resilience\n• Implement retry and timeout strategies',
+        'cdc': 'Learning Outcomes:\n• Configure databases for Change Data Capture\n• Implement CDC using Debezium\n• Capture database changes in real-time\n• Stream changes to event bus\n• Handle schema evolution',
+        'docker': 'Learning Outcomes:\n• Containerize Spring Boot applications\n• Understand Docker networking\n• Build multi-stage Dockerfiles\n• Optimize Docker images\n• Manage container lifecycle',
+        'k8s': 'Learning Outcomes:\n• Deploy applications to Kubernetes\n• Configure Deployments, Services, and Ingress\n• Manage pods and replicas\n• Implement health checks and probes\n• Scale applications horizontally',
+        'chaos': 'Learning Outcomes:\n• Implement chaos engineering practices\n• Test system resilience\n• Simulate failures and recovery\n• Build fault-tolerant systems\n• Monitor system behavior under stress'
     };
 
     if (roadmapContainer && roadmapPhases.length > 0 && roadmapLineProgress) {

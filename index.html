@@ -17,6 +17,13 @@
 
     <!-- Styles -->
     <link href="./output.css?v=10" rel="stylesheet">
+    
+    <!-- Smooth Scrolling -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -51,7 +58,7 @@
             </div>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
                 <a href="#roadmap-container" class="hover:text-white transition-colors">Curriculum</a>
-                <a href="#testimonials" class="hover:text-white transition-colors">Outcomes</a>
+                <a href="#spring-boot-detail" class="hover:text-white transition-colors">Outcomes</a>
                 <a href="https://courses.algocamp.io/learn" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Pricing</a>
             </div>
             <div class="flex items-center gap-4">
@@ -100,15 +107,26 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#spring-boot-detail"
+                    <a href="https://courses.algocamp.io/learn/fast-checkout/247298?priceId=235778&cpst=1767556373797&code=SPRING2026"
                         class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all shadow-[0_0_30px_-5px_rgba(0,112,243,0.6)] hover:shadow-[0_0_40px_-5px_rgba(0,112,243,0.8)] hover:scale-105 active:scale-95 duration-300">
-                        Explore Cohorts
+                        Join the Advanced Spring boot cohort
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                     <a href="#roadmap-container"
                         class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-border bg-surface/50 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/10 transition-all hover:scale-105 active:scale-95 duration-300">
                         View Curriculum
                     </a>
+                </div>
+
+                <!-- Pricing Info -->
+                <div class="mt-6 inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-green-500/10 border border-green-500/20">
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-2xl font-bold text-green-400">₹7,999</span>
+                        <span class="text-sm text-muted line-through">₹9,999</span>
+                    </div>
+                    <span class="text-xs text-green-400 font-mono px-2 py-1 rounded bg-green-500/20 border border-green-500/30">
+                        Use code: SPRING2026
+                    </span>
                 </div>
 
                 <div class="pt-8 flex items-center gap-4 text-sm text-muted font-mono">
@@ -263,8 +281,26 @@
                 <h2 class="text-4xl md:text-6xl font-extrabold mt-4 mb-6">Spring Boot <span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Cloud
                         Native</span></h2>
-                <p class="text-xl text-muted max-w-2xl">This isn't another "Todo List" tutorial. This is distributed
+                <p class="text-xl text-muted max-w-2xl mb-8">This isn't another "Todo List" tutorial. This is distributed
                     systems engineering on the JVM.</p>
+                
+                <!-- Join Cohort CTA with Pricing -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <a href="https://courses.algocamp.io/learn/fast-checkout/247298?priceId=235778&cpst=1767556373797&code=SPRING2026"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-all shadow-[0_0_30px_-5px_rgba(34,197,94,0.6)] hover:shadow-[0_0_40px_-5px_rgba(34,197,94,0.8)] hover:scale-105 active:scale-95 duration-300">
+                        Join the Advanced Spring boot cohort
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <div class="flex items-center gap-3 px-4 py-2 rounded-lg bg-green-500/10 border border-green-500/20">
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-2xl font-bold text-green-400">₹7,999</span>
+                            <span class="text-sm text-muted line-through">₹9,999</span>
+                        </div>
+                        <span class="text-xs text-green-400 font-mono px-2 py-1 rounded bg-green-500/20 border border-green-500/30">
+                            SPRING2026
+                        </span>
+                    </div>
+                </div>
             </div>
 
             <!-- 1. The Reality Check (Interactive Question Card) -->
@@ -314,7 +350,7 @@
                             > Implementing Idempotency for Payment APIs?
                         </div>
                         <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
-                            > Optimistic vs Pessimistic Locking with Redis?
+                            > Optimistic vs Pessimistic Locking vs TTL lock with Redis
                         </div>
 
                         <!-- Duplicate Set for Loop -->
@@ -335,7 +371,7 @@
                             > Implementing Idempotency for Payment APIs?
                         </div>
                         <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
-                            > Optimistic vs Pessimistic Locking with Redis?
+                            > Optimistic vs Pessimistic Locking vs TTL lock with Redis
                         </div>
                     </div>
                 </div>
@@ -388,19 +424,19 @@
                             </div>
                             <div class="absolute bottom-4 left-6 flex flex-wrap gap-2">
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">GeoHashing</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-primary/20 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110 cursor-default">GeoHashing</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">WebSockets</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-primary/20 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110 cursor-default">WebSockets</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">gRPC</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-primary/20 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110 cursor-default">gRPC</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">SockJS</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-primary/20 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110 cursor-default">SockJS</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Stomp</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-primary/20 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110 cursor-default">Stomp</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Protocol Buffers</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-primary/20 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110 cursor-default">Protocol Buffers</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Redis</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-primary/20 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110 cursor-default">Redis</span>
                             </div>
                         </div>
 
@@ -487,21 +523,21 @@
                             </div>
                             <div class="absolute bottom-4 left-6 flex flex-wrap gap-2">
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">ACID</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-accent/20 hover:border-accent/50 hover:text-accent transition-all duration-300 hover:scale-110 cursor-default">ACID</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Idempotency</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-accent/20 hover:border-accent/50 hover:text-accent transition-all duration-300 hover:scale-110 cursor-default">Idempotency</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Distributed Transactions</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-accent/20 hover:border-accent/50 hover:text-accent transition-all duration-300 hover:scale-110 cursor-default">Distributed Transactions</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">SAGA</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-accent/20 hover:border-accent/50 hover:text-accent transition-all duration-300 hover:scale-110 cursor-default">SAGA</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Orchestration</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-accent/20 hover:border-accent/50 hover:text-accent transition-all duration-300 hover:scale-110 cursor-default">Orchestration</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Choreography</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-accent/20 hover:border-accent/50 hover:text-accent transition-all duration-300 hover:scale-110 cursor-default">Choreography</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">2-Phase Commit</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-accent/20 hover:border-accent/50 hover:text-accent transition-all duration-300 hover:scale-110 cursor-default">2-Phase Commit</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Sharding</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-accent/20 hover:border-accent/50 hover:text-accent transition-all duration-300 hover:scale-110 cursor-default">Sharding</span>
                             </div>
                         </div>
 
@@ -596,15 +632,15 @@
                             </div>
                             <div class="absolute bottom-4 left-6 flex flex-wrap gap-2">
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">ElasticSearch</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-red-500/20 hover:border-red-500/50 hover:text-red-400 transition-all duration-300 hover:scale-110 cursor-default">ElasticSearch</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Kafka</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-red-500/20 hover:border-red-500/50 hover:text-red-400 transition-all duration-300 hover:scale-110 cursor-default">Kafka</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Webflux</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-red-500/20 hover:border-red-500/50 hover:text-red-400 transition-all duration-300 hover:scale-110 cursor-default">Webflux</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Completable Futures</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-red-500/20 hover:border-red-500/50 hover:text-red-400 transition-all duration-300 hover:scale-110 cursor-default">Completable Futures</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">MongoDB</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-red-500/20 hover:border-red-500/50 hover:text-red-400 transition-all duration-300 hover:scale-110 cursor-default">MongoDB</span>
                             </div>
                         </div>
 
@@ -722,19 +758,19 @@
                             </div>
                             <div class="absolute bottom-4 left-6 flex flex-wrap gap-2">
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Redis</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400 transition-all duration-300 hover:scale-110 cursor-default">Redis</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">MySQL</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400 transition-all duration-300 hover:scale-110 cursor-default">MySQL</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Idempotency</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400 transition-all duration-300 hover:scale-110 cursor-default">Idempotency</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Transactions</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400 transition-all duration-300 hover:scale-110 cursor-default">Transactions</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Isolation Level</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400 transition-all duration-300 hover:scale-110 cursor-default">Isolation Level</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Distributed Cache Locks</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400 transition-all duration-300 hover:scale-110 cursor-default">Distributed Cache Locks</span>
                                 <span
-                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">DB Migration</span>
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-pink-500/20 hover:border-pink-500/50 hover:text-pink-400 transition-all duration-300 hover:scale-110 cursor-default">DB Migration</span>
                             </div>
                         </div>
 
@@ -775,6 +811,186 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Ecommerce App -->
+                    <div
+                        class="group relative rounded-3xl bg-[#0a0a0a] border border-white/10 overflow-hidden hover:border-orange-500/50 transition-all duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+
+                        <!-- Visual Header -->
+                        <div class="h-48 bg-grid-pattern relative border-b border-white/5 overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-40">
+                                <!-- Shopping cart and products visualization -->
+                                <div class="relative w-full h-full flex items-center justify-center">
+                                    <!-- Shopping cart -->
+                                    <div class="absolute left-1/4 top-1/2 transform -translate-y-1/2">
+                                        <div class="w-20 h-20 bg-orange-500/20 rounded-lg border-2 border-orange-500/40 flex items-center justify-center relative">
+                                            <svg class="w-10 h-10 text-orange-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                            </svg>
+                                            <div class="absolute -top-1 -right-1 w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center text-xs font-bold text-white">3</div>
+                                        </div>
+                                    </div>
+                                    <!-- Products floating -->
+                                    <div class="absolute right-1/4 top-1/3">
+                                        <div class="w-12 h-12 bg-orange-500/20 rounded-lg border border-orange-500/40 transform rotate-12 animate-pulse" style="animation-duration: 2s;"></div>
+                                    </div>
+                                    <div class="absolute right-1/3 bottom-1/3">
+                                        <div class="w-10 h-10 bg-orange-500/20 rounded-lg border border-orange-500/40 transform -rotate-12 animate-pulse" style="animation-duration: 2s; animation-delay: 0.5s;"></div>
+                                    </div>
+                                    <!-- Connection lines -->
+                                    <svg class="absolute inset-0 w-full h-full stroke-orange-500/30" style="stroke-width:1.5">
+                                        <line x1="25%" y1="50%" x2="60%" y2="33%" />
+                                        <line x1="25%" y1="50%" x2="66%" y2="66%" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-6 flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-orange-500/20 hover:border-orange-500/50 hover:text-orange-400 transition-all duration-300 hover:scale-110 cursor-default">Spring Boot</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-orange-500/20 hover:border-orange-500/50 hover:text-orange-400 transition-all duration-300 hover:scale-110 cursor-default">MySQL</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-orange-500/20 hover:border-orange-500/50 hover:text-orange-400 transition-all duration-300 hover:scale-110 cursor-default">REST APIs</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-orange-500/20 hover:border-orange-500/50 hover:text-orange-400 transition-all duration-300 hover:scale-110 cursor-default">MVC</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-orange-500/20 hover:border-orange-500/50 hover:text-orange-400 transition-all duration-300 hover:scale-110 cursor-default">CRUD</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-orange-500/20 hover:border-orange-500/50 hover:text-orange-400 transition-all duration-300 hover:scale-110 cursor-default">Service Layer</span>
+                            </div>
+                        </div>
+
+                        <div class="p-8 relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div
+                                    class="w-12 h-12 bg-surface rounded-xl flex items-center justify-center border border-white/10 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <i data-lucide="shopping-cart" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                                        Ecommerce Application</h4>
+                                    <span class="text-xs text-muted font-mono">Monolithic CRUD App</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 mb-8">
+                                <div
+                                    class="p-4 rounded-xl bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors">
+                                    <h5
+                                        class="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                        <i data-lucide="crosshair" class="w-3 h-3 text-red-400"></i> The Challenge
+                                    </h5>
+                                    <p class="text-sm text-muted">Building a monolithic ecommerce application with
+                                        industry-standard Spring Boot architecture and REST APIs.</p>
+                                </div>
+                                <div class="pl-4 border-l-2 border-orange-500/30">
+                                    <h5
+                                        class="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                                        <i data-lucide="check-circle-2" class="w-3 h-3"></i> The Solution
+                                    </h5>
+                                    <ul class="text-sm text-muted space-y-1">
+                                        <li>• MVC Architecture with Services & Repositories</li>
+                                        <li>• REST APIs in industry standard format</li>
+                                        <li>• Database integration and CRUD operations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stock Exchange Order Matching -->
+                    <div
+                        class="group relative rounded-3xl bg-[#0a0a0a] border border-white/10 overflow-hidden hover:border-yellow-500/50 transition-all duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-yellow-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+
+                        <!-- Visual Header -->
+                        <div class="h-48 bg-grid-pattern relative border-b border-white/5 overflow-hidden">
+                            <div class="absolute inset-0 flex items-end justify-center px-8 pb-8">
+                                <!-- Bar Chart visualization -->
+                                <div class="relative flex items-end justify-center gap-3" style="height: 80%;">
+                                    <!-- Bar 1 -->
+                                    <div class="w-6 bg-yellow-500 rounded-t transition-all duration-500 group-hover:bg-yellow-400" style="height: 30px; min-height: 20px;"></div>
+                                    <!-- Bar 2 -->
+                                    <div class="w-6 bg-yellow-500/90 rounded-t transition-all duration-500 group-hover:bg-yellow-400" style="height: 50px; min-height: 20px;"></div>
+                                    <!-- Bar 3 -->
+                                    <div class="w-6 bg-yellow-500/95 rounded-t transition-all duration-500 group-hover:bg-yellow-400 animate-pulse" style="height: 70px; min-height: 20px; animation-duration: 2s;"></div>
+                                    <!-- Bar 4 -->
+                                    <div class="w-6 bg-yellow-500/85 rounded-t transition-all duration-500 group-hover:bg-yellow-400" style="height: 40px; min-height: 20px;"></div>
+                                    <!-- Bar 5 -->
+                                    <div class="w-6 bg-yellow-500/90 rounded-t transition-all duration-500 group-hover:bg-yellow-400" style="height: 60px; min-height: 20px;"></div>
+                                    <!-- Bar 6 -->
+                                    <div class="w-6 bg-yellow-500 rounded-t transition-all duration-500 group-hover:bg-yellow-400" style="height: 90px; min-height: 20px;"></div>
+                                    <!-- Bar 7 -->
+                                    <div class="w-6 bg-yellow-500/95 rounded-t transition-all duration-500 group-hover:bg-yellow-400" style="height: 65px; min-height: 20px;"></div>
+                                    <!-- Bar 8 -->
+                                    <div class="w-6 bg-yellow-500/85 rounded-t transition-all duration-500 group-hover:bg-yellow-400" style="height: 35px; min-height: 20px;"></div>
+                                </div>
+                                <!-- Chart baseline -->
+                                <div class="absolute bottom-8 left-8 right-8 h-0.5 bg-yellow-500/50"></div>
+                                <!-- Price indicator line -->
+                                <div class="absolute top-1/3 left-8 right-8 h-0.5 border-t border-dashed border-yellow-500/60"></div>
+                                <!-- Animated price points -->
+                                <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-yellow-500 rounded-full animate-ping" style="animation-duration: 2s;"></div>
+                                <div class="absolute top-1/3 right-1/3 w-2 h-2 bg-yellow-500 rounded-full animate-ping" style="animation-duration: 2s; animation-delay: 0.5s;"></div>
+                            </div>
+                            <div class="absolute bottom-4 left-6 flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-yellow-500/20 hover:border-yellow-500/50 hover:text-yellow-400 transition-all duration-300 hover:scale-110 cursor-default">Order Book</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-yellow-500/20 hover:border-yellow-500/50 hover:text-yellow-400 transition-all duration-300 hover:scale-110 cursor-default">Redis</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-yellow-500/20 hover:border-yellow-500/50 hover:text-yellow-400 transition-all duration-300 hover:scale-110 cursor-default">Multi-threading</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-yellow-500/20 hover:border-yellow-500/50 hover:text-yellow-400 transition-all duration-300 hover:scale-110 cursor-default">Strategy Pattern</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-yellow-500/20 hover:border-yellow-500/50 hover:text-yellow-400 transition-all duration-300 hover:scale-110 cursor-default">Builder Pattern</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase hover:bg-yellow-500/20 hover:border-yellow-500/50 hover:text-yellow-400 transition-all duration-300 hover:scale-110 cursor-default">Limit Orders</span>
+                            </div>
+                        </div>
+
+                        <div class="p-8 relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div
+                                    class="w-12 h-12 bg-surface rounded-xl flex items-center justify-center border border-white/10 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors">
+                                        Stock Exchange - Order Matching</h4>
+                                    <span class="text-xs text-muted font-mono">NSE-like Order Matching Engine</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 mb-8">
+                                <div
+                                    class="p-4 rounded-xl bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors">
+                                    <h5
+                                        class="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                        <i data-lucide="crosshair" class="w-3 h-3 text-red-400"></i> The Challenge
+                                    </h5>
+                                    <p class="text-sm text-muted">Building a high-performance order matching engine like
+                                        NSE with real-time order book management and multi-threaded processing.</p>
+                                </div>
+                                <div class="pl-4 border-l-2 border-yellow-500/30">
+                                    <h5
+                                        class="text-xs font-bold text-yellow-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                                        <i data-lucide="check-circle-2" class="w-3 h-3"></i> The Solution
+                                    </h5>
+                                    <ul class="text-sm text-muted space-y-1">
+                                        <li>• Order matching algorithms (Strategy Pattern)</li>
+                                        <li>• In-memory order book using Redis</li>
+                                        <li>• Multi-threading for scalable exchange</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -796,7 +1012,7 @@
                         </div>
                     </div>
 
-                    <!-- Phase 1 -->
+                    <!-- Phase 1: Foundation & Java Ecosystem -->
                     <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-24 group" data-index="0">
                         <div class="md:text-right flex flex-col items-center md:items-end order-2 md:order-1">
                             <span
@@ -805,26 +1021,39 @@
                                 <div
                                     class="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono mb-4">
                                     Phase 1: Foundation</div>
-                                <h4 class="text-2xl font-bold text-white mb-2">Advanced Java & Framework Internals</h4>
-                                <p class="text-sm text-muted mb-6">Stop guessing how Spring works. Understand the magic
-                                    behind the annotations.</p>
+                                <h4 class="text-2xl font-bold text-white mb-2">Java Ecosystem & Spring Boot Basics</h4>
+                                <p class="text-sm text-muted mb-6">Master the fundamentals of Java, JVM, and Spring Boot framework internals.</p>
 
                                 <ul class="text-sm text-muted space-y-2 inline-block text-left">
                                     <li class="flex items-center gap-2">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>JVM Memory Model &
-                                        Garbage Collection Tuning
+                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div><span
+                                            class="hover:text-blue-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="gradle">Gradle Deep Dive</span>
                                     </li>
                                     <li class="flex items-center gap-2">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>Custom ClassLoaders &
-                                        Reflection
+                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div><span
+                                            class="hover:text-blue-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="jvm">JVM, GC & Performance Tuning</span>
                                     </li>
                                     <li class="flex items-center gap-2">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>Spring Bean Lifecycle &
-                                        Scopes
+                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div><span
+                                            class="hover:text-blue-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="aop">AOP & Custom Annotations</span>
                                     </li>
                                     <li class="flex items-center gap-2">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>AOP Proxies (JDK Dynamic
-                                        vs CGLIB)
+                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div><span
+                                            class="hover:text-blue-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="lld">Low-Level Design & Patterns</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div><span
+                                            class="hover:text-blue-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="spring-basics">Spring Boot Basics</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div><span
+                                            class="hover:text-blue-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="rest-api">REST API Development</span>
                                     </li>
                                 </ul>
                             </div>
@@ -839,7 +1068,7 @@
                         <div class="order-1 md:order-2"></div>
                     </div>
 
-                    <!-- Phase 2 -->
+                    <!-- Phase 2: Architecture & Project Structure -->
                     <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-24 group" data-index="1">
                         <div class="order-2 md:order-1"></div>
                         <div
@@ -855,34 +1084,37 @@
                             <div class="relative z-10 w-full">
                                 <div
                                     class="inline-block px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono mb-4">
-                                    Phase 2: Core Distributed Systems</div>
-                                <h4 class="text-2xl font-bold text-white mb-2">The Theory of Scale</h4>
-                                <p class="text-sm text-muted mb-6">Master the theoretical building blocks before writing
-                                    a single line of microservice code.</p>
+                                    Phase 2: Architecture</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">MVC & Microservices Architecture</h4>
+                                <p class="text-sm text-muted mb-6">Build industry-scale project structures and understand microservices patterns.</p>
 
                                 <ul class="text-sm text-muted space-y-2">
                                     <li class="flex items-center gap-2">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div>CAP Theorem & PACELC
-                                        strategies
+                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div><span
+                                            class="hover:text-purple-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="mvc">MVC Architecture & Project Structure</span>
                                     </li>
                                     <li class="flex items-center gap-2">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div>Direct vs Eventual
-                                        Consistency Models
+                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div><span
+                                            class="hover:text-purple-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="microservices">Microservices Architecture</span>
                                     </li>
                                     <li class="flex items-center gap-2">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div>Distributed Consensus
-                                        (Raft/Paxos basics)
+                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div><span
+                                            class="hover:text-purple-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="eureka">Service Discovery (Eureka)</span>
                                     </li>
                                     <li class="flex items-center gap-2">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div>Leader Election &
-                                        Cluster Coordination
+                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div><span
+                                            class="hover:text-purple-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="api-gateway">API Gateway</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Phase 3 -->
+                    <!-- Phase 3: Data Layer & ORM -->
                     <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-24 group" data-index="2">
                         <div class="md:text-right flex flex-col items-center md:items-end order-2 md:order-1">
                             <span
@@ -890,30 +1122,50 @@
                             <div class="relative z-10 w-full">
                                 <div
                                     class="inline-block px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-mono mb-4">
-                                    Phase 3: Microservices Practicum</div>
-                                <h4 class="text-2xl font-bold text-white mb-2">Building Resilient Services</h4>
-                                <p class="text-sm text-muted mb-6">Implement patterns that prevent cascading failures in
-                                    production.</p>
+                                    Phase 3: Data Layer</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">Spring Data JPA & Database Mastery</h4>
+                                <p class="text-sm text-muted mb-6">Master ORM, database internals, transactions, and scaling strategies.</p>
 
                                 <ul class="text-sm text-muted space-y-2 inline-block text-left">
                                     <li class="flex items-center gap-2">
                                         <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
                                             class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
-                                            data-code-key="eureka">Service Discovery (Eureka)</span>
+                                            data-code-key="jpa">Spring Data JPA & ORM</span>
                                     </li>
                                     <li class="flex items-center gap-2">
                                         <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
                                             class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
-                                            data-code-key="resilience">Circuit Breakers</span>
-                                    </li>
-                                    <li class="flex items-center gap-2">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>Distributed Tracing
-                                        (Zipkin)
+                                            data-code-key="db-basics">Database Basics & Normalization</span>
                                     </li>
                                     <li class="flex items-center gap-2">
                                         <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
                                             class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
-                                            data-code-key="grpc">gRPC & Protobufs</span>
+                                            data-code-key="indexing">Indexing in Databases</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
+                                            class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="sharding">DB Partitioning & Sharding</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
+                                            class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="replication">DB Replication Strategies</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
+                                            class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="transactions">Advanced DB Transactions</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
+                                            class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="schema-design">Schema Designing</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
+                                            class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline-offset-4"
+                                            data-code-key="mongodb">Advanced MongoDB</span>
                                     </li>
                                 </ul>
                             </div>
@@ -928,7 +1180,7 @@
                         <div class="order-1 md:order-2"></div>
                     </div>
 
-                    <!-- Phase 4 -->
+                    <!-- Phase 4: Distributed Systems Patterns -->
                     <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-24 group" data-index="3">
                         <div class="order-2 md:order-1"></div>
                         <div
@@ -944,69 +1196,200 @@
                             <div class="relative z-10 w-full">
                                 <div
                                     class="inline-block px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-mono mb-4">
-                                    Phase 4: Data at Scale</div>
-                                <h4 class="text-2xl font-bold text-white mb-2">Data Engineering Patterns</h4>
-                                <p class="text-sm text-muted mb-6">Handling massive datasets without bringing down your
-                                    database.</p>
+                                    Phase 4: Distributed Patterns</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">CQRS, SAGA & Event Sourcing</h4>
+                                <p class="text-sm text-muted mb-6">Master advanced patterns for building scalable distributed systems.</p>
 
                                 <ul class="text-sm text-muted space-y-2">
                                     <li class="flex items-center gap-2">
                                         <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
                                             class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
-                                            data-code-key="sharding">Database Sharding</span>
+                                            data-code-key="cqrs">CQRS Pattern</span>
                                     </li>
                                     <li class="flex items-center gap-2">
                                         <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
                                             class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
-                                            data-code-key="cdc">CDC with Debezium</span>
+                                            data-code-key="saga">SAGA Pattern</span>
                                     </li>
                                     <li class="flex items-center gap-2">
                                         <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
                                             class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
-                                            data-code-key="caching">Caching Patterns</span>
+                                            data-code-key="event-sourcing">Event Sourcing</span>
                                     </li>
                                     <li class="flex items-center gap-2">
                                         <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
                                             class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
-                                            data-code-key="kafka">Event Streaming (Kafka)</span>
+                                            data-code-key="outbox">Outbox Pattern & CDC</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
+                                            class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="kafka">Kafka & Event Streaming</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
+                                            class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="rabbitmq">RabbitMQ</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
+                                            class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="consistency">Consistency Models</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Phase 5 -->
-                    <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-12 group" data-index="4">
+                    <!-- Phase 5: Communication & Integration -->
+                    <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-24 group" data-index="4">
                         <div class="md:text-right flex flex-col items-center md:items-end order-2 md:order-1">
                             <span
                                 class="text-4xl font-black text-white/5 absolute -top-10 md:right-0 md:mr-[-100px] z-0 select-none">05</span>
                             <div class="relative z-10 w-full">
                                 <div
+                                    class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono mb-4">
+                                    Phase 5: Communication</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">Inter-Service Communication & Caching</h4>
+                                <p class="text-sm text-muted mb-6">Master gRPC, WebSockets, caching strategies, and real-time communication.</p>
+
+                                <ul class="text-sm text-muted space-y-2 inline-block text-left">
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-cyan-500"></div><span
+                                            class="hover:text-cyan-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="grpc">gRPC & Protobuf</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-cyan-500"></div><span
+                                            class="hover:text-cyan-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="caching">Redis Caching Strategies</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-cyan-500"></div><span
+                                            class="hover:text-cyan-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="websockets">WebSockets & Real-Time</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-cyan-500"></div><span
+                                            class="hover:text-cyan-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="auth">Authentication & Authorization</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-cyan-500"></div><span
+                                            class="hover:text-cyan-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="spring-ai">Spring AI</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-cyan-500"></div><span
+                                            class="hover:text-cyan-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="distributed-locks">Distributed Locks (Redis)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center hidden md:flex">
+                            <div
+                                class="roadmap-dot bg-[#0a0a0a] border-cyan-500/50 shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                                <span class="text-cyan-500 font-bold">5</span>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2"></div>
+                    </div>
+
+                    <!-- Phase 6: API Gateway & Advanced Topics -->
+                    <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-24 group" data-index="5">
+                        <div class="order-2 md:order-1"></div>
+                        <div
+                            class="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center hidden md:flex">
+                            <div
+                                class="roadmap-dot bg-[#0a0a0a] border-pink-500/50 shadow-[0_0_20px_rgba(236,72,153,0.5)]">
+                                <span class="text-pink-500 font-bold">6</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center md:items-start order-1 md:order-2">
+                            <span
+                                class="text-4xl font-black text-white/5 absolute -top-10 md:left-0 md:ml-[-100px] z-0 select-none">06</span>
+                            <div class="relative z-10 w-full">
+                                <div
+                                    class="inline-block px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-mono mb-4">
+                                    Phase 6: API & Gateway</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">API Gateway & Advanced Patterns</h4>
+                                <p class="text-sm text-muted mb-6">Master API gateways, idempotency, rate limiting, and AWS services.</p>
+
+                                <ul class="text-sm text-muted space-y-2">
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-pink-500"></div><span
+                                            class="hover:text-pink-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="idempotency">Idempotent APIs</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-pink-500"></div><span
+                                            class="hover:text-pink-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="api-gateway">API Gateway Patterns</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-pink-500"></div><span
+                                            class="hover:text-pink-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="geohashing">GeoHashing & Spatial Indexes</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-pink-500"></div><span
+                                            class="hover:text-pink-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="aws-db">AWS Databases & Services</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-pink-500"></div><span
+                                            class="hover:text-pink-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="aws-lambda">AWS Lambda & IAM</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 7: Projects -->
+                    <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-12 group" data-index="6">
+                        <div class="md:text-right flex flex-col items-center md:items-end order-2 md:order-1">
+                            <span
+                                class="text-4xl font-black text-white/5 absolute -top-10 md:right-0 md:mr-[-100px] z-0 select-none">07</span>
+                            <div class="relative z-10 w-full">
+                                <div
                                     class="inline-block px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-mono mb-4">
-                                    Phase 5: Cloud Native</div>
-                                <h4 class="text-2xl font-bold text-white mb-2">DevOps & Production</h4>
-                                <p class="text-sm text-muted mb-6">Deploying, monitoring, and scaling in the real world.
-                                </p>
+                                    Phase 7: Projects</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">Production-Grade Projects</h4>
+                                <p class="text-sm text-muted mb-6">Build real-world systems with HLD, LLD, and production-ready code.</p>
 
                                 <ul class="text-sm text-muted space-y-2 inline-block text-left">
                                     <li class="flex items-center gap-2">
                                         <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span
                                             class="hover:text-red-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
-                                            data-code-key="docker">Docker & Networking</span>
+                                            data-code-key="uber-project">Uber-like Ride Hailing Backend</span>
                                     </li>
                                     <li class="flex items-center gap-2">
                                         <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span
                                             class="hover:text-red-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
-                                            data-code-key="k8s">Kubernetes</span>
-                                    </li>
-                                    <li class="flex items-center gap-2">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div>CI/CD Pipelines (GitHub
-                                        Actions)
+                                            data-code-key="wallet-project">Payment Wallet System</span>
                                     </li>
                                     <li class="flex items-center gap-2">
                                         <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span
                                             class="hover:text-red-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
-                                            data-code-key="chaos">Chaos Engineering</span>
+                                            data-code-key="airbnb-project">Airbnb Clone - Booking Platform</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span
+                                            class="hover:text-red-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="stock-project">Stock Exchange - Order Matching</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span
+                                            class="hover:text-red-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="quora-project">Quora Clone - Q&A Platform</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span
+                                            class="hover:text-red-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="ecommerce-project">Ecommerce Application</span>
                                     </li>
                                 </ul>
                             </div>
@@ -1015,11 +1398,21 @@
                             class="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center hidden md:flex">
                             <div
                                 class="roadmap-dot bg-[#0a0a0a] border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.5)]">
-                                <span class="text-red-500 font-bold">5</span>
+                                <span class="text-red-500 font-bold">7</span>
                             </div>
                         </div>
                         <div class="order-1 md:order-2"></div>
                     </div>
+                </div>
+
+                <!-- View Full Syllabus PDF Button -->
+                <div class="mt-16 text-center">
+                    <a href="https://drive.google.com/file/d/1dx8_QgPQBZDkeIk7AnbpmpCfvCbLxxQH/view" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-primary/20">
+                        <i data-lucide="file-text" class="w-5 h-5"></i>
+                        View Full Syllabus as PDF
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
 
