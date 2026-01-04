@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoCamp v2.0 | Master Backend Engineering</title>
+    <meta name="description"
+        content="Master industry-grade backend engineering with AlgoCamp. Metrics-driven, battle-tested learning.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="./output.css?v=10" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body
+    class="bg-background text-text font-sans antialiased overflow-x-hidden selection:bg-primary/30 selection:text-white">
+
+    <!-- Floating Code Terminal -->
+    <div id="code-terminal" class="fixed z-[100] pointer-events-none opacity-0 transition-opacity duration-300">
+        <div
+            class="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl p-4 w-80 font-mono text-xs text-left relative overflow-hidden backdrop-blur-xl">
+            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+            <div class="flex items-center gap-1.5 mb-3 border-b border-white/5 pb-2">
+                <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+                <span class="ml-auto text-[10px] text-muted font-sans">preview.sh</span>
+            </div>
+            <div id="code-content" class="text-green-400 min-h-[60px] whitespace-pre-wrap">
+                <span class="typing-cursor">|</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i data-lucide="terminal" class="w-6 h-6 text-primary"></i>
+                <span class="font-bold text-xl tracking-tight">AlgoCamp<span class="text-primary">.io</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+                <a href="#curriculum" class="hover:text-white transition-colors">Curriculum</a>
+                <a href="#testimonials" class="hover:text-white transition-colors">Outcomes</a>
+                <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden md:block text-sm font-medium hover:text-white transition-colors">Login</a>
+                <a href="#"
+                    class="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors">
+                    Join Waitlist
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Dynamic Background -->
+        <div class="absolute inset-0 bg-background perspective-1000 overflow-hidden">
+            <div class="absolute inset-x-0 bottom-0 h-[120%] bg-grid-moving opacity-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+        </div>
+
+        <div
+            class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-[150px] animate-float mix-blend-screen">
+        </div>
+        <div
+            class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[150px] animate-float-reverse mix-blend-screen">
+        </div>
+
+        <div class="relative z-20 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-xs font-mono backdrop-blur-md shadow-[0_0_15px_-3px_rgba(0,112,243,0.3)]">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    New Cohort Starts Feb 1st
+                </div>
+
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]">
+                    <span id="typing-header" class="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#0070f3] to-[#00ff94] drop-shadow-[0_0_15px_rgba(0,112,243,0.5)]">
+                        Master Backend Engineering
+                    </span>
+                    <span class="typing-cursor text-primary">|</span>
+                </h1>
+
+                <p class="text-lg text-muted max-w-xl leading-relaxed">
+                    Bridge the gap between theory and reality. Learn from engineers who have built scale.
+                    Industry-grade system design, production-ready code, and architectural patterns.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#courses"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all shadow-[0_0_30px_-5px_rgba(0,112,243,0.6)] hover:shadow-[0_0_40px_-5px_rgba(0,112,243,0.8)] hover:scale-105 active:scale-95 duration-300">
+                        Explore Cohorts
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#curriculum"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-border bg-surface/50 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/10 transition-all hover:scale-105 active:scale-95 duration-300">
+                        View Curriculum
+                    </a>
+                </div>
+
+                <div class="pt-8 flex items-center gap-4 text-sm text-muted font-mono">
+                    <div class="flex -space-x-2">
+                        <div
+                            class="w-8 h-8 rounded-full bg-white border border-border flex items-center justify-center shadow-lg overflow-hidden">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" 
+                                 alt="Amazon" class="w-5 h-5" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-[10px] font-bold text-orange-600\'>A</span>';" />
+                        </div>
+                        <div
+                            class="w-8 h-8 rounded-full bg-white border border-border flex items-center justify-center shadow-lg overflow-hidden">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" 
+                                 alt="Google" class="w-6 h-6" />
+                        </div>
+                        <div
+                            class="w-8 h-8 rounded-full bg-white border border-border flex items-center justify-center shadow-lg overflow-hidden">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" 
+                                 alt="Microsoft" class="w-5 h-5" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-[10px] font-bold text-blue-600\'>M</span>';" />
+                        </div>
+                    </div>
+                    <span>Trusted by engineers from Amazon, Google, Microsoft and more</span>
+                </div>
+            </div>
+
+            <!-- Visual / Code Block -->
+            <div class="relative lg:h-[600px] w-full flex items-center justify-center perspective-1000">
+                <div
+                    class="relative w-full max-w-lg bg-[#0d0d0d]/90 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl transform rotate-y-[-5deg] hover:rotate-y-0 transition-transform duration-700 neon-border group">
+                    <!-- Glow effect behind -->
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-primary to-accent opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500">
+                    </div>
+
+                    <div class="relative flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-white/5">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                        </div>
+                        <div id="code-filename" class="text-xs text-muted font-mono ml-2">server.go</div>
+                    </div>
+                    <div class="p-6 font-mono text-sm overflow-x-auto min-h-[300px]">
+                        <pre><code id="typewriter-code" class="language-go block min-h-full"></code></pre>
+                        <!-- Cursor -->
+                        <span class="inline-block w-2.5 h-4 bg-primary animate-pulse ml-0.5 align-middle"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section / Engineering Philosophy -->
+    <section class="py-24 border-t border-white/5 reveal-on-scroll relative">
+        <div class="absolute inset-0 bg-blue-500/5 blur-[120px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Built for <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Production</span>
+                </h2>
+                <p class="text-muted text-lg">We don't teach "hello world". We tear down production incidents and
+                    rebuild systems that handle millions of requests.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="tilt-card group relative p-[1px] rounded-2xl bg-gradient-to-b from-white/10 to-transparent transition-all duration-300">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl">
+                    </div>
+                    <div
+                        class="relative h-full bg-[#0a0a0a] rounded-2xl p-8 overflow-hidden transform-style-3d border border-white/5">
+                        <div class="translate-z-20 mb-6">
+                            <div
+                                class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary border border-primary/20 shadow-[0_0_15px_-3px_rgba(0,112,243,0.3)]">
+                                <i data-lucide="cpu" class="w-7 h-7"></i>
+                            </div>
+                        </div>
+                        <h3 class="translate-z-10 text-xl font-bold mb-4 text-white">Battle-Tested Patterns</h3>
+                        <p class="translate-z-10 text-muted leading-relaxed text-sm">
+                            Learn the exact architectural patterns used by top tech companies.
+                            <span
+                                class="block mt-4 text-xs font-mono text-primary/80 border-l-2 border-primary/50 pl-3">
+                                > Circuit Breakers<br>> Event Sourcing<br>> CQRS
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="tilt-card group relative p-[1px] rounded-2xl bg-gradient-to-b from-white/10 to-transparent transition-all duration-300">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-accent/20 to-purple-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl">
+                    </div>
+                    <div
+                        class="relative h-full bg-[#0a0a0a] rounded-2xl p-8 overflow-hidden transform-style-3d border border-white/5">
+                        <div class="translate-z-20 mb-6">
+                            <div
+                                class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent border border-accent/20 shadow-[0_0_15px_-3px_rgba(0,255,148,0.3)]">
+                                <i data-lucide="zap" class="w-7 h-7"></i>
+                            </div>
+                        </div>
+                        <h3 class="translate-z-10 text-xl font-bold mb-4 text-white">Real-World Scalability</h3>
+                        <p class="translate-z-10 text-muted leading-relaxed text-sm">
+                            Move beyond theory. Implement actual distributed primitives.
+                            <span class="block mt-4 text-xs font-mono text-accent/80 border-l-2 border-accent/50 pl-3">
+                                > Consistent Hashing<br>> Distributed Locks<br>> Sharding Strategies
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="tilt-card group relative p-[1px] rounded-2xl bg-gradient-to-b from-white/10 to-transparent transition-all duration-300">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl">
+                    </div>
+                    <div
+                        class="relative h-full bg-[#0a0a0a] rounded-2xl p-8 overflow-hidden transform-style-3d border border-white/5">
+                        <div class="translate-z-20 mb-6">
+                            <div
+                                class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 border border-purple-500/20 shadow-[0_0_15px_-3px_rgba(168,85,247,0.3)]">
+                                <i data-lucide="git-merge" class="w-7 h-7"></i>
+                            </div>
+                        </div>
+                        <h3 class="translate-z-10 text-xl font-bold mb-4 text-white">Production-Ready Code</h3>
+                        <p class="translate-z-10 text-muted leading-relaxed text-sm">
+                            Write clean, maintainable code ready for enterprise environments.
+                            <span
+                                class="block mt-4 text-xs font-mono text-purple-400/80 border-l-2 border-purple-500/50 pl-3">
+                                > TDD & Integration Tests<br>> CI/CD Pipelines<br>> Observability
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spring Boot Cohort Detailed Section -->
+    <section id="spring-boot-detail" class="py-24 border-t border-white/5 reveal-on-scroll relative overflow-hidden">
+        <div class="absolute inset-0 bg-green-500/5 blur-[150px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <!-- Header -->
+            <div class="mb-24">
+                <span
+                    class="px-3 py-1 rounded-full border border-green-500/20 bg-green-500/10 text-green-400 text-xs font-mono font-semibold uppercase tracking-wider">New
+                    Cohort</span>
+                <h2 class="text-4xl md:text-6xl font-extrabold mt-4 mb-6">Spring Boot <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Cloud
+                        Native</span></h2>
+                <p class="text-xl text-muted max-w-2xl">This isn't another "Todo List" tutorial. This is distributed
+                    systems engineering on the JVM.</p>
+            </div>
+
+            <!-- 1. The Reality Check (Interactive Question Card) -->
+            <div
+                class="grid lg:grid-cols-2 gap-0 border border-white/10 rounded-2xl bg-[#0a0a0a] overflow-hidden mb-24 relative group">
+                <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+
+                <!-- Left: The Hook -->
+                <div
+                    class="p-12 flex flex-col justify-center relative z-10 border-b lg:border-b-0 lg:border-r border-white/10">
+                    <h3 class="text-3xl font-bold text-white mb-6">Are you ready for <span
+                            class="text-red-500">Production?</span></h3>
+                    <p class="text-muted text-lg leading-relaxed mb-8">
+                        Most developers know how to write an API. Very few know how to keep it alive when traffic spikes
+                        100x.
+                        <br><br>
+                        If you can't answer the questions on the right, you are leaving money on the table in your
+                        career.
+                    </p>
+                    <button
+                        class="w-fit px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold">
+                        Take the Challenge
+                    </button>
+                </div>
+
+                <!-- Right: Scrolling Questions -->
+                <div class="relative h-[400px] bg-black/50 overflow-hidden marquee-vertical-container">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] z-20 pointer-events-none">
+                    </div>
+                    <div class="p-8 space-y-6 animate-scroll-vertical">
+                        <!-- Questions Set 1 -->
+                        <div
+                            class="p-4 rounded-lg bg-white/5 border border-red-500/20 text-red-200/80 font-mono text-sm">
+                            > Do you know how to integrate a Rate Limiter in Spring Boot?
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
+                            > How do you handle Distributed Transactions across services?
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
+                            > Have you ever connected to a Sharded Database?
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
+                            > How does Elastic Search indexing actually work?
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
+                            > Implementing Idempotency for Payment APIs?
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
+                            > Optimistic vs Pessimistic Locking with Redis?
+                        </div>
+
+                        <!-- Duplicate Set for Loop -->
+                        <div
+                            class="p-4 rounded-lg bg-white/5 border border-red-500/20 text-red-200/80 font-mono text-sm">
+                            > Do you know how to integrate a Rate Limiter in Spring Boot?
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
+                            > How do you handle Distributed Transactions across services?
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
+                            > Have you ever connected to a Sharded Database?
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
+                            > How does Elastic Search indexing actually work?
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
+                            > Implementing Idempotency for Payment APIs?
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 text-muted font-mono text-sm">
+                            > Optimistic vs Pessimistic Locking with Redis?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Project Highlights: System Design Portfolio -->
+            <div class="mb-32">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div>
+                        <span class="text-primary font-mono text-xs tracking-wider uppercase mb-2 block"> hands-on
+                            engineering</span>
+                        <h3 class="text-3xl md:text-5xl font-bold text-white">System Design <span
+                                class="text-muted">Portfolio</span></h3>
+                        <p class="text-muted text-lg mt-4 max-w-2xl">Don't just build APIs. Build resilient, distributed
+                            systems that can survive a data center outage.</p>
+                    </div>
+                </div>
+
+                <!-- Hero Projects Grid -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-8">
+
+                    <!-- Hero Card 1: Uber -->
+                    <div
+                        class="group relative rounded-3xl bg-[#0a0a0a] border border-white/10 overflow-hidden hover:border-primary/50 transition-all duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+
+                        <!-- Visual Header -->
+                        <div class="h-48 bg-grid-pattern relative border-b border-white/5 overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                                <!-- Simple CSS geometric representation of a graph/map -->
+                                <div class="relative w-full h-full">
+                                    <div
+                                        class="absolute top-1/2 left-1/2 w-32 h-32 border border-primary/30 rounded-full transform -translate-x-1/2 -translate-y-1/2 animate-ping">
+                                    </div>
+                                    <div
+                                        class="absolute top-1/2 left-1/2 w-24 h-24 border border-primary/50 rounded-full transform -translate-x-1/2 -translate-y-1/2">
+                                    </div>
+                                    <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full"></div>
+                                    <div class="absolute bottom-1/3 right-1/3 w-2 h-2 bg-white rounded-full"></div>
+                                    <svg class="absolute inset-0 w-full h-full stroke-primary/20"
+                                        style="stroke-width:1">
+                                        <line x1="25%" y1="25%" x2="50%" y2="50%" />
+                                        <line x1="50%" y1="50%" x2="66%" y2="66%" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-6 flex gap-2">
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">GeoHashing</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">WebSockets</span>
+                            </div>
+                        </div>
+
+                        <div class="p-8 relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div
+                                    class="w-12 h-12 bg-surface rounded-xl flex items-center justify-center border border-white/10 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <i data-lucide="car" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                                        Uber Backend</h4>
+                                    <span class="text-xs text-muted font-mono">Location & Matching Engine</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 mb-8">
+                                <div
+                                    class="p-4 rounded-xl bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors">
+                                    <h5
+                                        class="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                        <i data-lucide="crosshair" class="w-3 h-3 text-red-400"></i> The Challenge
+                                    </h5>
+                                    <p class="text-sm text-muted">Matching 10M+ riders with drivers in real-time while
+                                        maintaining strong consistency on location data.</p>
+                                </div>
+                                <div class="pl-4 border-l-2 border-primary/30">
+                                    <h5
+                                        class="text-xs font-bold text-primary uppercase tracking-wider mb-2 flex items-center gap-2">
+                                        <i data-lucide="check-circle-2" class="w-3 h-3"></i> The Solution
+                                    </h5>
+                                    <ul class="text-sm text-muted space-y-1">
+                                        <li>• QuadTree indices for spatial search</li>
+                                        <li>• Consistent Hashing for sharding </li>
+                                        <li>• gRPC for inter-service comms</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Card 2: Payment Wallet -->
+                    <div
+                        class="group relative rounded-3xl bg-[#0a0a0a] border border-white/10 overflow-hidden hover:border-accent/50 transition-all duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+
+                        <!-- Visual Header -->
+                        <div class="h-48 bg-grid-pattern relative border-b border-white/5 overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                                <!-- Visual for transactions -->
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-16 h-20 bg-white/10 rounded-md border border-white/20"></div>
+                                    <div class="flex gap-1">
+                                        <div class="w-2 h-2 rounded-full bg-accent animate-bounce"
+                                            style="animation-delay: 0ms"></div>
+                                        <div class="w-2 h-2 rounded-full bg-accent animate-bounce"
+                                            style="animation-delay: 150ms"></div>
+                                        <div class="w-2 h-2 rounded-full bg-accent animate-bounce"
+                                            style="animation-delay: 300ms"></div>
+                                    </div>
+                                    <div class="w-16 h-20 bg-white/10 rounded-md border border-white/20"></div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-6 flex gap-2">
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">ACID</span>
+                                <span
+                                    class="px-2 py-1 rounded-md bg-black/50 border border-white/10 text-[10px] font-mono text-muted uppercase">Idempotency</span>
+                            </div>
+                        </div>
+
+                        <div class="p-8 relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div
+                                    class="w-12 h-12 bg-surface rounded-xl flex items-center justify-center border border-white/10 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <i data-lucide="wallet" class="w-6 h-6 text-accent"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">
+                                        Digital Wallet</h4>
+                                    <span class="text-xs text-muted font-mono">Ledger & Transactions</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 mb-8">
+                                <div
+                                    class="p-4 rounded-xl bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors">
+                                    <h5
+                                        class="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                        <i data-lucide="alert-triangle" class="w-3 h-3 text-red-400"></i> The Challenge
+                                    </h5>
+                                    <p class="text-sm text-muted">Preventing double-spending and handling distributed
+                                        transaction failures without locking the entire DB.</p>
+                                </div>
+                                <div class="pl-4 border-l-2 border-accent/30">
+                                    <h5
+                                        class="text-xs font-bold text-accent uppercase tracking-wider mb-2 flex items-center gap-2">
+                                        <i data-lucide="check-circle-2" class="w-3 h-3"></i> The Solution
+                                    </h5>
+                                    <ul class="text-sm text-muted space-y-1">
+                                        <li>• SAGA Pattern (Orchestration)</li>
+                                        <li>• 2-Phase Commit (where necessary)</li>
+                                        <li>• Event Sourcing for audit trails</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Secondary Projects Grid -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Quora -->
+                    <div
+                        class="group relative rounded-2xl bg-[#0a0a0a] border border-white/5 overflow-hidden hover:border-red-500/30 transition-all duration-500 flex flex-col justify-between">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+
+                        <div class="p-6 relative z-10">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-surface border border-white/10 flex items-center justify-center text-red-500 mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                                <i data-lucide="search" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors">
+                                High-Scale Search</h4>
+                            <p class="text-sm text-muted mb-4">Implementing inverted indices with ElasticSearch and
+                                designing feed generation pipelines using Kafka.</p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 border border-white/5 text-[10px] font-mono text-muted group-hover:text-white transition-colors flex items-center gap-1">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div> Elastic
+                                </span>
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 border border-white/5 text-[10px] font-mono text-muted group-hover:text-white transition-colors flex items-center gap-1">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div> Kafka
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Airbnb -->
+                    <div
+                        class="group relative rounded-2xl bg-[#0a0a0a] border border-white/5 overflow-hidden hover:border-pink-500/30 transition-all duration-500 flex flex-col justify-between">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+
+                        <div class="p-6 relative z-10">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-surface border border-white/10 flex items-center justify-center text-pink-500 mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                                <i data-lucide="home" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors">
+                                Booking Engine</h4>
+                            <p class="text-sm text-muted mb-4">Handling booking race conditions with Distributed Redis
+                                Locks and Optimistic Locking strategies.</p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 border border-white/5 text-[10px] font-mono text-muted group-hover:text-white transition-colors flex items-center gap-1">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-pink-500"></div> Redis
+                                </span>
+                                <span
+                                    class="px-2 py-1 rounded bg-white/5 border border-white/5 text-[10px] font-mono text-muted group-hover:text-white transition-colors flex items-center gap-1">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-pink-500"></div> Postgres
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Syllabus: The Engineering Roadmap -->
+            <div class="relative">
+                <div class="text-center mb-24">
+                    <span class="text-primary font-mono text-xs tracking-wider uppercase mb-2 block">The Path to Senior
+                        Engineer</span>
+                    <h3 class="text-3xl md:text-5xl font-bold text-white">Production <span
+                            class="text-muted">Curriculum</span></h3>
+                    <p class="text-muted text-lg mt-4 max-w-2xl mx-auto">A structured path from "Framework User" to
+                        "System Architect".</p>
+                </div>
+
+                <div class="relative max-w-4xl mx-auto" id="roadmap-container">
+                    <!-- Vertical Line -->
+                    <div class="roadmap-line">
+                        <div class="roadmap-line-progress h-0 bg-primary w-full transition-all duration-300 ease-out">
+                        </div>
+                    </div>
+
+                    <!-- Phase 1 -->
+                    <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-24 group" data-index="0">
+                        <div class="md:text-right flex flex-col items-center md:items-end order-2 md:order-1">
+                            <span
+                                class="text-4xl font-black text-white/5 absolute -top-10 md:right-0 md:mr-[-100px] z-0 select-none">01</span>
+                            <div class="relative z-10 w-full">
+                                <div
+                                    class="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono mb-4">
+                                    Phase 1: Foundation</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">Advanced Java & Framework Internals</h4>
+                                <p class="text-sm text-muted mb-6">Stop guessing how Spring works. Understand the magic
+                                    behind the annotations.</p>
+
+                                <ul class="text-sm text-muted space-y-2 inline-block text-left">
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>JVM Memory Model &
+                                        Garbage Collection Tuning
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>Custom ClassLoaders &
+                                        Reflection
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>Spring Bean Lifecycle &
+                                        Scopes
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>AOP Proxies (JDK Dynamic
+                                        vs CGLIB)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center hidden md:flex">
+                            <div
+                                class="roadmap-dot bg-[#0a0a0a] border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+                                <span class="text-blue-500 font-bold">1</span>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2"></div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-24 group" data-index="1">
+                        <div class="order-2 md:order-1"></div>
+                        <div
+                            class="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center hidden md:flex">
+                            <div
+                                class="roadmap-dot bg-[#0a0a0a] border-purple-500/50 shadow-[0_0_20px_rgba(168,85,247,0.5)]">
+                                <span class="text-purple-500 font-bold">2</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center md:items-start order-1 md:order-2">
+                            <span
+                                class="text-4xl font-black text-white/5 absolute -top-10 md:left-0 md:ml-[-100px] z-0 select-none">02</span>
+                            <div class="relative z-10 w-full">
+                                <div
+                                    class="inline-block px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono mb-4">
+                                    Phase 2: Core Distributed Systems</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">The Theory of Scale</h4>
+                                <p class="text-sm text-muted mb-6">Master the theoretical building blocks before writing
+                                    a single line of microservice code.</p>
+
+                                <ul class="text-sm text-muted space-y-2">
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div>CAP Theorem & PACELC
+                                        strategies
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div>Direct vs Eventual
+                                        Consistency Models
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div>Distributed Consensus
+                                        (Raft/Paxos basics)
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-purple-500"></div>Leader Election &
+                                        Cluster Coordination
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-24 group" data-index="2">
+                        <div class="md:text-right flex flex-col items-center md:items-end order-2 md:order-1">
+                            <span
+                                class="text-4xl font-black text-white/5 absolute -top-10 md:right-0 md:mr-[-100px] z-0 select-none">03</span>
+                            <div class="relative z-10 w-full">
+                                <div
+                                    class="inline-block px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-mono mb-4">
+                                    Phase 3: Microservices Practicum</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">Building Resilient Services</h4>
+                                <p class="text-sm text-muted mb-6">Implement patterns that prevent cascading failures in
+                                    production.</p>
+
+                                <ul class="text-sm text-muted space-y-2 inline-block text-left">
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
+                                            class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="eureka">Service Discovery (Eureka)</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
+                                            class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="resilience">Circuit Breakers</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>Distributed Tracing
+                                        (Zipkin)
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span
+                                            class="hover:text-green-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="grpc">gRPC & Protobufs</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center hidden md:flex">
+                            <div
+                                class="roadmap-dot bg-[#0a0a0a] border-green-500/50 shadow-[0_0_20px_rgba(34,197,94,0.5)]">
+                                <span class="text-green-500 font-bold">3</span>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2"></div>
+                    </div>
+
+                    <!-- Phase 4 -->
+                    <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-24 group" data-index="3">
+                        <div class="order-2 md:order-1"></div>
+                        <div
+                            class="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center hidden md:flex">
+                            <div
+                                class="roadmap-dot bg-[#0a0a0a] border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.5)]">
+                                <span class="text-amber-500 font-bold">4</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center md:items-start order-1 md:order-2">
+                            <span
+                                class="text-4xl font-black text-white/5 absolute -top-10 md:left-0 md:ml-[-100px] z-0 select-none">04</span>
+                            <div class="relative z-10 w-full">
+                                <div
+                                    class="inline-block px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-mono mb-4">
+                                    Phase 4: Data at Scale</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">Data Engineering Patterns</h4>
+                                <p class="text-sm text-muted mb-6">Handling massive datasets without bringing down your
+                                    database.</p>
+
+                                <ul class="text-sm text-muted space-y-2">
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
+                                            class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="sharding">Database Sharding</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
+                                            class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="cdc">CDC with Debezium</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
+                                            class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="caching">Caching Patterns</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div><span
+                                            class="hover:text-amber-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="kafka">Event Streaming (Kafka)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 5 -->
+                    <div class="roadmap-phase relative grid md:grid-cols-2 gap-8 md:gap-24 mb-12 group" data-index="4">
+                        <div class="md:text-right flex flex-col items-center md:items-end order-2 md:order-1">
+                            <span
+                                class="text-4xl font-black text-white/5 absolute -top-10 md:right-0 md:mr-[-100px] z-0 select-none">05</span>
+                            <div class="relative z-10 w-full">
+                                <div
+                                    class="inline-block px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-mono mb-4">
+                                    Phase 5: Cloud Native</div>
+                                <h4 class="text-2xl font-bold text-white mb-2">DevOps & Production</h4>
+                                <p class="text-sm text-muted mb-6">Deploying, monitoring, and scaling in the real world.
+                                </p>
+
+                                <ul class="text-sm text-muted space-y-2 inline-block text-left">
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span
+                                            class="hover:text-red-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="docker">Docker & Networking</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span
+                                            class="hover:text-red-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="k8s">Kubernetes</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div>CI/CD Pipelines (GitHub
+                                        Actions)
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span
+                                            class="hover:text-red-400 cursor-help transition-colors decoration-dotted underline underline-offset-4"
+                                            data-code-key="chaos">Chaos Engineering</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center hidden md:flex">
+                            <div
+                                class="roadmap-dot bg-[#0a0a0a] border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.5)]">
+                                <span class="text-red-500 font-bold">5</span>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Courses Section / Academy Tracks -->
+    <section id="courses" class="py-24 bg-surface/30 reveal-on-scroll">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Featured <span class="text-white">Cohorts</span>
+                    </h2>
+                    <p class="text-muted text-lg">Select your specialization path.</p>
+                </div>
+                <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center gap-2">
+                    View full catalog <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 h-full">
+                <!-- Card 1 -->
+                <div
+                    class="md:col-span-2 glass-card spotlight-card rounded-2xl p-0 relative group overflow-hidden border-t border-t-white/10">
+                    <div class="absolute top-4 right-4 z-20">
+                        <span class="flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                        </span>
+                    </div>
+
+                    <div class="p-8 pb-0 relative z-10">
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-xs font-mono font-semibold uppercase tracking-wider shadow-inner shadow-primary/20">Full
+                                Stack Backend</span>
+                            <span class="text-xs font-mono text-red-400 flex items-center gap-1"><i data-lucide="flame"
+                                    class="w-3 h-3"></i> Selling Fast</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">Lambda 4.0</h3>
+                        <p class="text-muted max-w-md">Comprehensive Backend development mastery. Architect, build, and
+                            deploy distributed systems from scratch.</p>
+
+                        <!-- Tech Stack -->
+                        <div class="flex gap-4 mt-6">
+                            <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center border border-white/5 hover:border-white/20 transition-colors"
+                                title="Node.js">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                    class="w-6 h-6 grayscale group-hover:grayscale-0 transition-all opacity-70 group-hover:opacity-100" />
+                            </div>
+                            <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center border border-white/5 hover:border-white/20 transition-colors"
+                                title="Go">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+                                    class="w-6 h-6 grayscale group-hover:grayscale-0 transition-all opacity-70 group-hover:opacity-100" />
+                            </div>
+                            <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center border border-white/5 hover:border-white/20 transition-colors"
+                                title="Docker">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                                    class="w-6 h-6 grayscale group-hover:grayscale-0 transition-all opacity-70 group-hover:opacity-100" />
+                            </div>
+                            <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center border border-white/5 hover:border-white/20 transition-colors"
+                                title="Kubernetes">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+                                    class="w-6 h-6 grayscale group-hover:grayscale-0 transition-all opacity-70 group-hover:opacity-100" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer / Stats -->
+                    <div
+                        class="mt-8 p-4 bg-black/40 border-t border-white/5 flex items-center justify-between backdrop-blur-md">
+                        <div class="flex gap-8 text-xs font-mono text-muted">
+                            <span class="flex items-center gap-2"><i data-lucide="clock"
+                                    class="w-3 h-3 text-primary"></i> 16 Weeks</span>
+                            <span class="flex items-center gap-2"><i data-lucide="users"
+                                    class="w-3 h-3 text-primary"></i> Live Cohort</span>
+                        </div>
+                        <button
+                            class="flex items-center gap-2 text-sm font-semibold text-white hover:text-primary transition-colors">
+                            <span>Syllabus</span> <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="glass-card spotlight-card rounded-2xl p-8 relative group border-t border-t-white/10 flex flex-col justify-between">
+                    <div class="absolute top-4 right-4 z-20">
+                        <span class="relative flex h-3 w-3">
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                    </div>
+
+                    <div>
+                        <span
+                            class="px-3 py-1 rounded-full border border-green-500/20 bg-green-500/10 text-green-400 text-xs font-mono font-semibold uppercase tracking-wider">Enterprise</span>
+                        <h3 class="text-2xl font-bold text-white mt-6 mb-2">Spring Boot</h3>
+                        <p class="text-muted text-sm">Design microservices for the enterprise. Tailored for the modern
+                            Java ecosystem.</p>
+
+                        <div class="flex gap-3 mt-6">
+                            <div class="w-8 h-8 bg-white/5 rounded-md flex items-center justify-center border border-white/5"
+                                title="Spring">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                                    class="w-5 h-5 grayscale group-hover:grayscale-0 transition-opacity opacity-70 group-hover:opacity-100" />
+                            </div>
+                            <div class="w-8 h-8 bg-white/5 rounded-md flex items-center justify-center border border-white/5"
+                                title="Java">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                    class="w-5 h-5 grayscale group-hover:grayscale-0 transition-opacity opacity-70 group-hover:opacity-100" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="text-xs font-mono text-muted">
+                            <span class="block text-white font-bold mb-1">Status</span>
+                            <span class="text-green-400">Enrolling</span>
+                        </div>
+                        <button class="p-2 rounded-full hover:bg-white/10 transition-colors text-white">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="glass-card spotlight-card rounded-2xl p-8 relative group border-t border-t-white/10 flex flex-col justify-between">
+                    <div class="absolute top-4 right-4 z-20">
+                        <span class="relative flex h-3 w-3">
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                        </span>
+                    </div>
+
+                    <div>
+                        <span
+                            class="px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-400 text-xs font-mono font-semibold uppercase tracking-wider">Architecture</span>
+                        <h3 class="text-2xl font-bold text-white mt-6 mb-2">System Design</h3>
+                        <p class="text-muted text-sm">Deep dive into LLD and HLD. Master the design of complex scalable
+                            systems.</p>
+
+                        <div class="flex gap-3 mt-6">
+                            <div class="w-8 h-8 bg-white/5 rounded-md flex items-center justify-center border border-white/5"
+                                title="System Design">
+                                <i data-lucide="box"
+                                    class="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors"></i>
+                            </div>
+                            <div class="w-8 h-8 bg-white/5 rounded-md flex items-center justify-center border border-white/5"
+                                title="Databases">
+                                <i data-lucide="database"
+                                    class="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="text-xs font-mono text-muted">
+                            <span class="block text-white font-bold mb-1">Status</span>
+                            <span class="text-purple-400">Waitlist</span>
+                        </div>
+                        <button class="p-2 rounded-full hover:bg-white/10 transition-colors text-white">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-24 border-y border-white/5 reveal-on-scroll">
+        <div class="max-w-7xl mx-auto px-6">
+            <h4 class="text-center text-sm font-mono text-muted mb-12 uppercase tracking-widest">Alumni working
+                at</h4>
+
+            <div class="marquee-container overflow-hidden whitespace-nowrap relative">
+                <div
+                    class="marquee-content inline-flex gap-12 md:gap-24 animate-marquee opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                    <!-- Duplicate items in JS or manually twice to ensure loop covers screen -->
+                    <div class="text-3xl font-extrabold text-white/80 shrink-0">Google</div>
+                    <div class="text-3xl font-extrabold text-white/80 shrink-0">Amazon</div>
+                    <div class="text-3xl font-extrabold text-white/80 shrink-0">Netflix</div>
+                    <div class="text-3xl font-extrabold text-white/80 shrink-0">Uber</div>
+                    <div class="text-3xl font-extrabold text-white/80 shrink-0">Airbnb</div>
+                    <div class="text-3xl font-extrabold text-white/80 shrink-0">Stripe</div>
+                    <div class="text-3xl font-extrabold text-white/80 shrink-0">Meta</div>
+                    <div class="text-3xl font-extrabold text-white/80 shrink-0">Shopify</div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-24">
+                <div class="p-8 bg-surface border border-border rounded-xl hover:border-primary/50 transition-colors">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>
+                    </div>
+                    <p class="text-lg text-white mb-6">"Elements of distributed systems that took me years to
+                        grasp were
+                        explained in weeks. Doubled my salary after this cohort."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full"></div>
+                        <div>
+                            <div class="font-bold text-white">Alex Chen</div>
+                            <div class="text-sm text-muted">Senior Engineer @ Stripe</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 bg-surface border border-border rounded-xl hover:border-primary/50 transition-colors">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>
+                    </div>
+                    <p class="text-lg text-white mb-6">"The only course that actually focuses on
+                        production-grade code.
+                        No fluff, just hard engineering."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full"></div>
+                        <div>
+                            <div class="font-bold text-white">Sarah Miller</div>
+                            <div class="text-sm text-muted">Backend Lead @ Spotify</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Terminal Style -->
+    <footer class="py-12 bg-black reveal-on-scroll border-t border-white/5 font-mono text-sm">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+            <div class="col-span-2">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="text-green-500">➜</span>
+                    <span class="font-bold text-xl tracking-tight text-white">AlgoCamp<span
+                            class="text-primary">.io</span></span>
+                    <span class="animate-pulse block w-2 h-4 bg-green-500 ml-1"></span>
+                </div>
+                <p class="text-muted max-w-sm">
+                    // Forging the next generation of backend engineering leaders.<br>
+                    // Production-grade training only.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 opacity-50">~/cohorts</h5>
+                <ul class="space-y-2 text-muted">
+                    <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><span
+                                class="text-green-500 opacity-0 hover:opacity-100 transition-opacity">></span>
+                            Lambda
+                            4.0</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><span
+                                class="text-green-500 opacity-0 hover:opacity-100 transition-opacity">></span>
+                            Spring
+                            Boot</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><span
+                                class="text-green-500 opacity-0 hover:opacity-100 transition-opacity">></span>
+                            System
+                            Design</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 opacity-50">~/connect</h5>
+                <ul class="space-y-2 text-muted">
+                    <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><span
+                                class="text-green-500 opacity-0 hover:opacity-100 transition-opacity">></span>
+                            Twitter</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><span
+                                class="text-green-500 opacity-0 hover:opacity-100 transition-opacity">></span>
+                            LinkedIn</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><span
+                                class="text-green-500 opacity-0 hover:opacity-100 transition-opacity">></span>
+                            Discord</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 pt-12 mt-12 border-t border-white/10 text-center text-muted">
+            <p>echo "© 2024 AlgoCamp Inc. All rights reserved."</p>
+        </div>
+    </footer>
+
+    <!-- Init JS -->
+    <script src="./script.js?v=4"></script>
+</body>
+
+</html>
