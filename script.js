@@ -61,7 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1
+        // threshold 0: tall sections (e.g. #spring-boot-detail on mobile) can never
+        // reach 10% intersection ratio because stacked content exceeds viewport height
+        threshold: 0
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -445,8 +447,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         roadmapPhases.forEach(phase => roadmapObserver.observe(phase));
 
-        // Laser Line Effect (Mouse Tracking)
+        // Laser Line Effect (Mouse Tracking) — desktop only
         roadmapContainer.addEventListener('mousemove', (e) => {
+            if (!window.matchMedia('(min-width: 768px)').matches) return;
             const rect = roadmapContainer.getBoundingClientRect();
             const y = e.clientY - rect.top;
             const percent = Math.min(Math.max((y / rect.height) * 100, 0), 100);
@@ -456,9 +459,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         roadmapContainer.addEventListener('mouseleave', () => {
+            if (!window.matchMedia('(min-width: 768px)').matches) return;
             roadmapLineProgress.classList.remove('laser-active');
         });
     }
+
+    // Mobile portfolio: reveal remaining projects
+    const portfolioToggle = document.getElementById('portfolio-mobile-toggle');
+    const portfolioMore = document.querySelector('.portfolio-mobile-more');
+    if (portfolioToggle && portfolioMore) {
+        portfolioToggle.addEventListener('click', () => {
+            portfolioMore.classList.remove('hidden');
+            portfolioToggle.remove();
+            lucide.createIcons();
+        });
+    }
+
+    // Mobile roadmap: expand collapsed topic lists
+    document.querySelectorAll('.roadmap-show-more').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const phase = btn.closest('.roadmap-phase');
+            if (!phase) return;
+            phase.querySelectorAll('.roadmap-topic-extra').forEach(item => {
+                item.classList.remove('hidden');
+                item.classList.add('flex');
+            });
+            btn.remove();
+        });
+    });
 
     // Floating Terminal Logic
     let typeInterval;
@@ -576,5 +604,32 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             clearInterval(typeInterval);
         });
+
+        // Tap-to-preview learning outcomes on touch devices
+        if (window.matchMedia('(hover: none)').matches) {
+            keyword.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                keyword.dispatchEvent(new MouseEvent('mouseenter', {
+                    clientX: e.clientX,
+                    clientY: e.clientY,
+                    bubbles: true
+                }));
+            });
+        }
     });
+
+    if (window.matchMedia('(hover: none)').matches && codeTerminal) {
+        document.addEventListener('click', () => {
+            codeTerminal.classList.remove('opacity-100');
+            codeTerminal.classList.add('opacity-0');
+            codeTerminal.style.cssText = `
+                position: fixed !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
+            `;
+            clearInterval(typeInterval);
+        });
+    }
 });
