@@ -344,67 +344,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Code Snippets Database - Learning Outcomes
     const codeSnippets = {
-        // Phase 1: Foundation
-        'gradle': 'Learning Outcomes:\n• Master Gradle build scripts and multi-module projects\n• Create fat jars and custom Gradle tasks\n• Understand dependency management and build lifecycle\n• Configure Gradle for Spring Boot applications',
-        'jvm': 'Learning Outcomes:\n• Deep dive into JVM internals and memory model\n• Master garbage collection algorithms and tuning\n• Understand class loading and bytecode execution\n• Performance profiling and optimization techniques',
-        'aop': 'Learning Outcomes:\n• Create custom annotations in Spring\n• Implement Aspect-Oriented Programming (AOP)\n• Understand JDK Dynamic Proxies vs CGLIB\n• Apply cross-cutting concerns (logging, security)',
-        'lld': 'Learning Outcomes:\n• Master OOP principles in Java\n• Implement design patterns: Builder, Singleton, Strategy, Observer\n• Design clean, maintainable class hierarchies\n• Apply SOLID principles in practice',
-        'spring-basics': 'Learning Outcomes:\n• Understand Spring Boot auto-configuration\n• Master dependency injection and inversion\n• Configure applications with application.properties\n• Create REST APIs with Spring MVC\n• Document APIs using OpenAPI/Swagger',
-        'rest-api': 'Learning Outcomes:\n• Build RESTful services with Spring MVC\n• Implement CRUD operations\n• Handle exceptions with @ControllerAdvice\n• Call external APIs using RestTemplate\n• Create DTOs and manage request/response mapping',
-        
-        // Phase 2: Architecture
-        'mvc': 'Learning Outcomes:\n• Design industry-ready project structure\n• Implement layered architecture (Controller, Service, Repository)\n• Organize config, seeders, jobs, and consumers\n• Build scalable MVC and modified MVC patterns',
-        'microservices': 'Learning Outcomes:\n• Understand Modular Monolith vs Microservices\n• Design microservices with Spring Cloud\n• Implement Feign Clients for service communication\n• Create HLD for Ecommerce, Uber, and Wallet systems\n• Master synchronous & asynchronous communication',
-        
-        // Phase 3: Data Layer
-        'jpa': 'Learning Outcomes:\n• Create entities with UUIDs and Lombok\n• Master inheritance strategies (@MappedSuperclass, @TablePerClass, @Joined)\n• Implement relational mappings (1:1, 1:N, M:N)\n• Write JPQL, Raw SQL, and Criteria API queries\n• Solve N+1 problem and optimize fetch strategies\n• Use Flyway for schema migrations',
-        'db-basics': 'Learning Outcomes:\n• Master DB normalization and ACID properties\n• Understand transaction isolation levels\n• Design schemas for E-commerce, Uber, Wallet apps\n• Optimize queries and understand indexing\n• Introduction to NoSQL (MongoDB) and use cases',
-        'indexing': 'Learning Outcomes:\n• Create and manage database indexes\n• Understand types of indexes (B-Tree, Hash, etc.)\n• Analyze query performance with/without indexes\n• Master B-Tree internals and index optimization',
-        'sharding': 'Learning Outcomes:\n• Understand partitioning and sharding strategies\n• Implement horizontal sharding in databases\n• Design shard keys for optimal distribution\n• Handle cross-shard queries and transactions',
-        'replication': 'Learning Outcomes:\n• Master Master-Slave replication architecture\n• Implement Multi-Master replication\n• Understand Leaderless architecture and quorums\n• Design replication for write/read heavy systems\n• Handle replication lag and consistency',
-        'transactions': 'Learning Outcomes:\n• Deep dive into ACID properties implementation\n• Master atomicity, consistency, isolation, durability\n• Understand strong vs eventual consistency\n• Implement pessimistic & optimistic concurrency control\n• Handle isolation levels and serialization',
-        'schema-design': 'Learning Outcomes:\n• Design complex schemas for Twitter & Airbnb\n• Normalize databases effectively\n• Optimize for different edge cases\n• Balance normalization vs denormalization',
-        'mongodb': 'Learning Outcomes:\n• Backup and restore MongoDB databases\n• Implement sharding and replication in MongoDB\n• Master transactions and ACID in MongoDB\n• Optimize with indexing and aggregation framework\n• Secure MongoDB deployments',
-        
-        // Phase 4: Distributed Patterns
-        'cqrs': 'Learning Outcomes:\n• Understand Command Query Responsibility Segregation\n• Scale queries and mutations separately\n• Implement eventual consistency in CQRS\n• Design read and write models\n• Build materialized views for queries',
-        'saga': 'Learning Outcomes:\n• Master SAGA pattern for distributed transactions\n• Implement Orchestration-based SAGA\n• Implement Choreography-based SAGA (event-based)\n• Handle compensation and rollback strategies\n• Design SAGA for financial systems',
-        'event-sourcing': 'Learning Outcomes:\n• Implement Event Sourcing with Kafka\n• Store events as source of truth\n• Rebuild state from event stream\n• Handle event versioning and migration\n• Combine with CQRS for scalable systems',
-        'outbox': 'Learning Outcomes:\n• Understand Transactional Outbox Pattern\n• Guarantee event publishing with outbox\n• Configure databases for Change Data Capture (CDC)\n• Implement CDC using Debezium\n• Handle event ordering and idempotency',
-        'kafka': 'Learning Outcomes:\n• Master Kafka architecture (Topics, Partitions, Brokers)\n• Implement Kafka Producers and Consumers\n• Handle Kafka Stream processing\n• Build real-time data pipelines\n• Understand consumer groups and offsets',
-        'rabbitmq': 'Learning Outcomes:\n• Understand RabbitMQ architecture\n• Implement message exchange patterns\n• Build publish-subscribe patterns\n• Handle message acknowledgments and delivery guarantees\n• Configure dead letter queues and retry mechanisms',
-        'consistency': 'Learning Outcomes:\n• Master consistency models: Eventual, Causal, Immediate\n• Understand CAP theorem trade-offs\n• Design for strong vs eventual consistency\n• Implement consistency patterns in distributed systems',
-        
-        // Phase 5: Communication
-        'grpc': 'Learning Outcomes:\n• Understand gRPC for inter-service communication\n• Compare Protobufs with Thrift and JSON\n• Understand performance improvements and payload size\n• Implement gRPC services in Spring Boot\n• Handle streaming and bidirectional communication',
-        'caching': 'Learning Outcomes:\n• Integrate Redis with Spring Data Redis\n• Implement caching strategies (TTL, eviction)\n• Master cache invalidation patterns\n• Build layered caching (Read Back, Read Through, Read Around)\n• Optimize cache hit rates',
-        'websockets': 'Learning Outcomes:\n• Implement WebSockets using STOMP and SockJS\n• Build real-time chat/order updates\n• Handle WebSocket connections in Spring Boot\n• Design real-time notification systems\n• Manage connection lifecycle and error handling',
-        'auth': 'Learning Outcomes:\n• Configure Spring Security\n• Implement JWT-based authentication\n• Build role-based access control (RBAC)\n• Understand OAuth 2.0 basics\n• Secure microservices with authentication',
-        'spring-ai': 'Learning Outcomes:\n• Integrate and configure LLM models with Spring AI\n• Build AI-powered features in Spring Boot\n• Understand prompt engineering\n• Handle AI API calls and responses',
-        'distributed-locks': 'Learning Outcomes:\n• Implement distributed locks using Redis\n• Compare with pessimistic and optimistic locking\n• Build optimistic, pessimistic, and distributed lock implementations\n• Handle lock expiration and deadlocks\n• Design lock-based concurrency control',
-        
-        // Phase 6: API & Gateway
-        'idempotency': 'Learning Outcomes:\n• Understand idempotency and its use cases\n• Implement idempotent APIs\n• Handle idempotency keys and tokens\n• Design idempotent payment and transaction APIs\n• Prevent duplicate operations',
-        'api-gateway': 'Learning Outcomes:\n• Implement API Gateway patterns (Kong, AWS API Gateway)\n• Configure rate limiting and throttling\n• Handle request/response transformation\n• Implement API versioning and documentation\n• Set up authentication at gateway level\n• Build circuit breaking and fallback mechanisms',
-        'geohashing': 'Learning Outcomes:\n• Understand how GeoHashing works\n• Compare GeoHashing with quadtrees\n• Use databases with GeoHashing for location search\n• Find nearby drivers/users using spatial indexes\n• Build scalable location-based APIs',
-        'aws-db': 'Learning Outcomes:\n• Use AWS RDS for relational databases\n• Configure AWS DocumentDB and MongoDB Atlas\n• Master Amazon DynamoDB\n• Implement Amazon S3 for blob storage\n• Use Amazon Redshift for analytics',
-        'aws-lambda': 'Learning Outcomes:\n• Create serverless functions in AWS Lambda\n• Set up permissions using IAM\n• Integrate Lambda with ELB\n• Build event-driven architectures\n• Optimize Lambda performance and costs',
-        
+        // Phase 1: Python & LLM Foundations
+        'python-refresher': 'Learning Outcomes:\n• Python basics, OOP, error handling & file I/O\n• Type hints & Pydantic for validated data models\n• Async Python for concurrent AI workflows\n• NumPy/Pandas foundations for data prep\n• Build reusable AI utility modules',
+        'llm-mental-model': 'Learning Outcomes:\n• Understand tokens, context windows & sampling\n• Compare temperature, top-p & max tokens\n• Reason about model capacity vs cost\n• Map prompt size to latency trade-offs\n• Build mental models for LLM behavior',
+        'llm-api-setup': 'Learning Outcomes:\n• Configure OpenAI & Gemini API clients\n• Understand LLM API request/response anatomy\n• Handle API keys, models & endpoints securely\n• Debug failed completions & rate limits\n• Compare provider pricing & capabilities',
+        'first-chatbot': 'Learning Outcomes:\n• Implement chat roles: system, user & assistant\n• Write effective system prompts\n• Manage multi-turn conversation history\n• Build your first production chatbot\n• Handle context window overflow gracefully',
+        'prompt-engineering': 'Learning Outcomes:\n• Zero-shot, one-shot & few-shot prompting\n• Chain-of-Thought (CoT) reasoning techniques\n• Context engineering for better outputs\n• Manage context window with summarization\n• Iterate prompts with structured evaluation',
+        'structured-prompts': 'Learning Outcomes:\n• Enforce structured JSON outputs from LLMs\n• Design prompt templates for consistency\n• Context window management strategies\n• Reduce hallucinations with constraints\n• Build reusable prompt libraries',
+        'text-tasks': 'Learning Outcomes:\n• Build summarization & translation pipelines\n• Route support tickets with classification\n• Generate and explain code with LLMs\n• Project: OpenAI API utilities library\n• Project: Customer Support Agent',
+
+        // Phase 2: LLM Applications
+        'llm-applications': 'Learning Outcomes:\n• Structure end-to-end LLM applications\n• JSON outputs, error handling & batching\n• Rate limit handling & retry strategies\n• Separate prompts, tools & business logic\n• Ship maintainable AI app architectures',
+        'fastapi-ai': 'Learning Outcomes:\n• Build FastAPI endpoints for AI workloads\n• Async request handling for LLM calls\n• Request validation with Pydantic models\n• Streaming responses with SSE\n• Deploy AI microservices with FastAPI',
+        'function-calling': 'Learning Outcomes:\n• Implement function calling & tool use\n• Parallel & forced tool call patterns\n• Connect LLMs to external APIs & databases\n• Design tool schemas for reliability\n• Debug tool selection & execution loops',
+        'pydantic-outputs': 'Learning Outcomes:\n• Parse LLM outputs into Pydantic models\n• Validate structured responses at runtime\n• Handle partial & malformed JSON gracefully\n• Build type-safe AI pipelines\n• Reduce post-processing boilerplate',
+        'openai-claude-sdk': 'Learning Outcomes:\n• Master OpenAI Python SDK patterns\n• Integrate Anthropic Claude SDK\n• Compare SDK features across providers\n• Switch models with minimal code changes\n• Handle streaming & async with both SDKs',
+        'embeddings': 'Learning Outcomes:\n• Generate and compare text embeddings\n• Build semantic search over documents\n• Measure embedding quality & similarity\n• Project: Exploring Embeddings\n• Choose embedding models for your use case',
+        'vector-databases': 'Learning Outcomes:\n• Store & query vectors with ChromaDB\n• Deploy Pinecone for managed vector search\n• Evaluate Milvus for large-scale retrieval\n• Index, filter & hybrid search patterns\n• Project: RAG Chatbot over YouTube Transcripts',
+
+        // Phase 3: RAG Systems
+        'rag-fundamentals': 'Learning Outcomes:\n• Build RAG pipelines with LangChain\n• Chunk, embed & retrieve documents\n• Implement hybrid search (keyword + vector)\n• Tune top-k, chunk size & overlap\n• Ground LLM answers in retrieved context',
+        'enterprise-rag': 'Learning Outcomes:\n• Advanced RAG: reranking & query rewriting\n• Multi-stage retrieval pipelines\n• RAGAS metrics for faithfulness & relevance\n• Handle enterprise document corpora\n• Reduce retrieval noise at scale',
+        'llamaindex-rag': 'Learning Outcomes:\n• Production RAG with LlamaIndex\n• Index management & query engines\n• Connect to diverse data sources\n• Optimize ingestion & retrieval latency\n• Compare LlamaIndex vs LangChain patterns',
+        'scalable-rag': 'Learning Outcomes:\n• Scale RAG with Python RQ job queues\n• Redis/Valkey for async task processing\n• FastAPI chat queue for concurrent users\n• Background embedding & indexing jobs\n• Handle burst traffic on RAG endpoints',
+        'huggingface-models': 'Learning Outcomes:\n• Navigate Hugging Face Hub & model cards\n• Load models with AutoModel & AutoTokenizer\n• Run Gemma & other open models locally\n• Choose pre-trained models for tasks\n• Deploy HF models in production pipelines',
+        'document-qa': 'Learning Outcomes:\n• Build Document Q&A with pre-trained models\n• Fine-tune retrieval for domain documents\n• Handle PDFs, markdown & structured docs\n• Evaluate answer quality on real corpora\n• Ship Chat-with-Docs experiences',
+        'rag-evaluation': 'Learning Outcomes:\n• Evaluate RAG with RAGAS framework\n• Bucket failures: retrieval vs generation\n• Three gulfs model for AI system gaps\n• Build automated eval pipelines\n• Iterate RAG based on measured metrics',
+
+        // Phase 4: AI Agents
+        'multimodal-hf': 'Learning Outcomes:\n• Computer vision with Hugging Face models\n• Speech-to-text & text-to-speech pipelines\n• CLIP for image-text understanding\n• Visual Q&A & diffusion model basics\n• Combine modalities in unified workflows',
+        'ai-agents': 'Learning Outcomes:\n• Build first agents with smolagents\n• Define tools & agent reasoning loops\n• Agentic RAG over dynamic knowledge\n• Handle tool errors & agent recovery\n• Design single-agent task workflows',
+        'multi-agent': 'Learning Outcomes:\n• Multi-agent patterns with AutoGen & CrewAI\n• A2A Protocol & subagent delegation\n• Role-based agent teams for complex tasks\n• Coordinate agents with shared state\n• Debug multi-agent communication flows',
+        'langgraph': 'Learning Outcomes:\n• Stateful workflows with LangGraph StateGraph\n• Checkpointing agent state with MongoDB\n• Project: Claude Code-like Coding Agent\n• Visual workflows with LangFlow\n• Build resumable, debuggable agent graphs',
+        'agent-memory': 'Learning Outcomes:\n• Short-term vs long-term agent memory\n• Vector-backed memory for recall\n• Integrate Mem0 for persistent memory\n• Memory pruning & relevance scoring\n• Design memory layers for production agents',
+        'knowledge-graphs': 'Learning Outcomes:\n• Graph memory with Neo4j & Kuzu\n• Write Cypher queries for knowledge retrieval\n• Connect LLMs to structured knowledge graphs\n• Hybrid graph + vector retrieval\n• Build entity-aware agent reasoning',
+        'voice-agents': 'Learning Outcomes:\n• STT → LLM → TTS voice agent pipeline\n• Real-time voice interaction patterns\n• Handle latency & interruption in voice UX\n• Project: Voice-Based AI Agent\n• Deploy voice agents with WebSocket streaming',
+        'mcp-agents': 'Learning Outcomes:\n• Build MCP servers for tool exposure\n• Integrate Agent SDK tools in workflows\n• Project: AI Code Reviewer like CodeRabbit\n• Standardize agent-tool interfaces with MCP\n• Connect agents to IDE & dev workflows',
+
+        // Phase 5: Production AI
+        'streaming-retries': 'Learning Outcomes:\n• Stream LLM responses with SSE\n• Exponential backoff & retry strategies\n• Fallback models & LLM Gateway patterns\n• Handle rate limits gracefully\n• Build resilient production AI APIs',
+        'local-llm': 'Learning Outcomes:\n• Deploy local LLMs with Ollama\n• Containerize with Docker & OpenWebUI\n• FastAPI endpoints on local models\n• Compare local vs cloud cost/latency\n• Hybrid routing between local & cloud LLMs',
+        'prompt-caching': 'Learning Outcomes:\n• Anthropic & OpenAI prompt caching\n• KV cache optimization for inference\n• Batching requests for cost savings\n• Measure latency vs cost trade-offs\n• Optimize production AI spend',
+        'observability': 'Learning Outcomes:\n• Trace LLM calls with Langfuse & LangSmith\n• Braintrust for eval-driven development\n• OpenTelemetry GenAI instrumentation\n• Debug production agent failures\n• Build dashboards for AI system health',
+        'llm-evaluations': 'Learning Outcomes:\n• LLM-as-judge evaluation patterns\n• RAGAS & custom eval metrics\n• Failure bucketing & regression tests\n• Three gulfs model for system gaps\n• Continuous eval in CI/CD pipelines',
+        'security-guardrails': 'Learning Outcomes:\n• OWASP LLM Top 10 vulnerabilities\n• NeMo Guardrails for output filtering\n• Prompt injection testing & mitigation\n• Responsible AI deployment practices\n• Adversarial testing for production systems',
+        'llmops': 'Learning Outcomes:\n• MLOps & LLMOps lifecycle management\n• RAG vs fine-tuning decision framework\n• Model governance & versioning\n• Production moderation & guardrails\n• Project: AI Trading Agent with risk controls',
+
+        // Phase 6: Deep Learning
+        'pytorch-foundations': 'Learning Outcomes:\n• Linear algebra & gradient descent fundamentals\n• PyTorch tensors & autograd\n• Training loops & loss functions\n• Mini Project: TensorFlow NN\n• Mini Project: MNIST Autoencoder',
+        'computer-vision': 'Learning Outcomes:\n• CNN architectures & convolution layers\n• Batch normalization & regularization\n• Vanishing gradient problem & solutions\n• Image classification pipelines\n• Transfer learning with pre-trained CNNs',
+        'sequence-models': 'Learning Outcomes:\n• RNNs, LSTMs & GRUs for sequences\n• Multi-input/output architectures\n• Project: Multi-Input OCR Models\n• Sequence-to-sequence modeling\n• Handle variable-length inputs',
+        'transformers-scratch': 'Learning Outcomes:\n• Self-attention mechanism from scratch\n• BPE tokenization implementation\n• GPT vs BERT architecture differences\n• Positional encoding & multi-head attention\n• Build transformer blocks in PyTorch',
+        'generative-models': 'Learning Outcomes:\n• GANs & VAEs for generative modeling\n• Training stability & mode collapse\n• TensorBoard for experiment tracking\n• Generate images & latent space exploration\n• Compare generative model families',
+        'llm-internals': 'Learning Outcomes:\n• KV Cache & Flash Attention internals\n• Mixture of Experts (MoE) architecture\n• RLHF & alignment fundamentals\n• DeepSeek & modern LLM innovations\n• Connect theory to production LLM behavior',
+        'fine-tuning-lora': 'Learning Outcomes:\n• LoRA & QLoRA parameter-efficient fine-tuning\n• Fine-tune with Unsloth for speed\n• Diffusion models & ViT/CLIP trends\n• Choose fine-tuning vs RAG vs prompting\n• Deploy fine-tuned models in production',
+
         // Phase 7: Projects
-        'uber-project': 'Learning Outcomes:\n• Build Uber-like ride hailing backend with HLD & LLD\n• Implement GeoHashing for driver-rider matching\n• Use databases for spatial queries\n• Build scalable APIs for real-time location tracking\n• Implement WebSockets for real-time notifications\n• Design order matching and pricing algorithms',
-        'wallet-project': 'Learning Outcomes:\n• Build payment wallet system (Paytm/Uber wallet)\n• Handle distributed transactions for financial systems\n• Integrate high-consistency databases\n• Optimize SAGA using choreography and orchestration\n• Implement idempotent payment APIs\n• Design ledger and transaction systems',
-        'airbnb-project': 'Learning Outcomes:\n• Setup microservices-based hotel booking application\n• Integrate MySQL and MongoDB for different services\n• Implement JWT-based authentication\n• Handle concurrency issues with transactional APIs\n• Build idempotent booking APIs\n• Integrate migrations in MySQL',
-        'stock-project': 'Learning Outcomes:\n• Build stock exchange for order matching (like NSE)\n• Understand order matching algorithms\n• Implement design patterns (Strategy, Builder)\n• Maintain order book in memory using Redis\n• Create limit order algorithms\n• Master multi-threading for scalable exchange',
-        'quora-project': 'Learning Outcomes:\n• Build Quora clone with Q&A and social features\n• Understand complex schema setup\n• Implement MVC architecture with services/repositories\n• Build complex ODM queries\n• Integrate ElasticSearch for inverted index search\n• Design feed generation pipelines',
-        'ecommerce-project': 'Learning Outcomes:\n• Build monolithic ecommerce application\n• Understand Spring Boot annotations\n• Integrate databases and understand services/repositories\n• Implement REST APIs in industry standard format\n• Design product catalog and order management\n• Handle inventory and payment flows',
-        
-        // Legacy entries (keeping for compatibility)
-        'eureka': 'Learning Outcomes:\n• Implement Service Discovery using Spring Cloud Netflix Eureka\n• Register and discover microservices\n• Handle service health checks\n• Configure Eureka server and clients\n• Build resilient service communication',
-        'resilience': 'Learning Outcomes:\n• Implement Circuit Breakers for fault tolerance\n• Build fallback mechanisms\n• Handle cascading failures\n• Monitor and manage service resilience\n• Implement retry and timeout strategies',
-        'cdc': 'Learning Outcomes:\n• Configure databases for Change Data Capture\n• Implement CDC using Debezium\n• Capture database changes in real-time\n• Stream changes to event bus\n• Handle schema evolution',
-        'docker': 'Learning Outcomes:\n• Containerize Spring Boot applications\n• Understand Docker networking\n• Build multi-stage Dockerfiles\n• Optimize Docker images\n• Manage container lifecycle',
-        'k8s': 'Learning Outcomes:\n• Deploy applications to Kubernetes\n• Configure Deployments, Services, and Ingress\n• Manage pods and replicas\n• Implement health checks and probes\n• Scale applications horizontally',
-        'chaos': 'Learning Outcomes:\n• Implement chaos engineering practices\n• Test system resilience\n• Simulate failures and recovery\n• Build fault-tolerant systems\n• Monitor system behavior under stress'
+        'coding-agent-project': 'Learning Outcomes:\n• Build a Claude Code-like coding agent\n• LangGraph stateful file-editing workflows\n• MCP tools for repo navigation & edits\n• E2B sandbox for safe code execution\n• Ship an autonomous dev assistant',
+        'enterprise-rag-project': 'Learning Outcomes:\n• Enterprise RAG with hybrid search\n• Reranking & query decomposition\n• Multi-tenant document ingestion\n• RAGAS eval suite for production QA\n• Deploy scalable retrieval pipelines',
+        'customer-support-project': 'Learning Outcomes:\n• Customer Support Agent with ticket routing\n• Multi-turn conversation with tool use\n• Structured outputs for ticket classification\n• Integrate knowledge base via RAG\n• Measure resolution rate & CSAT proxies',
+        'youtube-rag-project': 'Learning Outcomes:\n• Ingest YouTube transcripts at scale\n• Pinecone vector store for semantic search\n• RAG chatbot over video content\n• Chunk long transcripts effectively\n• Cite sources in generated answers',
+        'code-reviewer-project': 'Learning Outcomes:\n• AI Code Reviewer like CodeRabbit\n• MCP server for PR diff analysis\n• Structured review comments with severity\n• Agent SDK for multi-file context\n• Integrate into developer workflows',
+        'voice-agent-project': 'Learning Outcomes:\n• Voice-Based AI Agent end-to-end\n• STT → LLM → TTS real-time pipeline\n• Handle interruptions & turn-taking\n• Voice UX for hands-free interaction\n• Deploy with low-latency streaming',
+        'perplexity-project': 'Learning Outcomes:\n• AI Search Engine like Perplexity\n• Agentic web retrieval with citations\n• Hybrid search over web + vector index\n• Streaming answers with source links\n• Faithfulness evaluation on responses',
+        'lovable-project': 'Learning Outcomes:\n• AI Web App Builder like Lovable/v0\n• Multi-agent: planner → coder → reviewer\n• Prompt-to-app with live preview\n• E2B sandbox for generated code\n• Ship working web apps from natural language',
+        'ai-interview-project': 'Learning Outcomes:\n• AI Interview Taker like Mercor\n• Voice interviews with scoring rubrics\n• Pydantic-structured candidate evaluation\n• Technical & behavioral question flows\n• Post-interview hiring reports',
+        'chat-doc-project': 'Learning Outcomes:\n• Chat With Any Document (ChatPDF-style)\n• Chunk, embed & index PDFs & docs\n• Grounded Q&A with source citations\n• ChromaDB for document retrieval\n• Handle large document corpora',
+        'trading-agent-project': 'Learning Outcomes:\n• AI Trading Agent (Bonus project)\n• Ingest market data & financial news\n• Agentic RAG over trading signals\n• Structured trade ideas with risk controls\n• Responsible deployment guardrails',
+        'dl-mini-projects': 'Learning Outcomes:\n• TensorFlow neural network from scratch\n• MNIST Autoencoder for representation learning\n• Multi-Input OCR model project\n• Training loops, metrics & visualization\n• Bridge deep learning theory to practice'
     };
 
     if (roadmapContainer && roadmapPhases.length > 0 && roadmapLineProgress) {
